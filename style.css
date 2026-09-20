@@ -1,0 +1,842 @@
+/* ============================================================
+   ALVINO & INTAN — persis template GoodChoice "ALISHA"
+   Token Alisha: #AC3B3B / #963232 / #A04949 / #7C2525
+   Card: #FFF4EC / Button DM Sans 15px / Radius 30px
+   Font: windsong=Great Vibes, calabassas=Cormorant, body=Roboto
+   ============================================================ */
+
+:root{
+  --primary:       #AC3B3B;
+  --script-dark:   #963232;
+  --body-text:     #A04949;
+  --maroon-dark:   #7C2525;
+  --card:          #FFF4ECD1;
+  --card-solid:    #FFF4EC;
+  --white:         #FFFFFF;
+  --text-dark:     #3a1c1c;
+  --text-grey:     #505050;
+
+  --font-windsong:   'windsong', 'Great Vibes', cursive;
+  --font-calabassas: 'calabassas-regular', 'Cormorant Garamond', serif;
+  --font-body:       'Roboto', 'Poppins', system-ui, sans-serif;
+  --font-btn:        'DM Sans', 'Roboto', system-ui, sans-serif;
+}
+
+@font-face{
+  font-family:'windsong';
+  src:url('assets/fonts/8273Windsong.woff2') format('woff2');
+  font-display:swap;
+}
+@font-face{
+  font-family:'calabassas-regular';
+  src:url('assets/fonts/2489calabassas-Regular.woff2') format('woff2');
+  font-display:swap;
+}
+@font-face{
+  font-family:'theater-brillion';
+  src:url('assets/fonts/9844Theater-Brillion.woff2') format('woff2');
+  font-display:swap;
+}
+@font-face{
+  font-family:'flowrise';
+  src:url('assets/fonts/7190FLOWRISE.woff2') format('woff2');
+  font-display:swap;
+}
+
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+
+html,body{
+  width:100%;
+  overflow-x:hidden;
+  scroll-behavior:smooth;
+  -webkit-font-smoothing:antialiased;
+}
+
+body{
+  font-family:var(--font-body);
+  font-weight:300;
+  color:var(--body-text);
+  background-color:#fdf6ee;
+  line-height:1.5;
+  min-height:100vh;
+}
+
+img{ max-width:100%; height:auto; display:block; }
+
+.page,
+.cover-inner{
+  width:100%;
+  max-width:480px;
+  margin:0 auto;
+  position:relative;
+}
+
+.page{
+  position:relative;
+  background-color:#fdf6ee;
+}
+
+.page-inner{
+  padding:50px 28px 60px;
+  position:relative;
+  z-index:2;
+}
+
+.center{ text-align:center; }
+
+/* ============ MUSIC TOGGLE (Alisha 40px) ============ */
+.music-toggle{
+  position:fixed;
+  bottom:82px;
+  right:max(16px, calc(50% - 224px));
+  z-index:1001;
+  width:40px; height:40px;
+  border-radius:50%;
+  border:none;
+  background:var(--maroon-dark);
+  color:#fff;
+  display:none;
+  align-items:center; justify-content:center;
+  box-shadow:0 4px 16px rgba(0,0,0,.25);
+  cursor:pointer;
+}
+.music-toggle.show{ display:flex; }
+.music-toggle .icon-pause{ display:none; }
+.music-toggle.playing .icon-note{ display:none; }
+.music-toggle.playing .icon-pause{ display:block; }
+
+/* ============ COVER — foto full + gradient persis Alisha ============ */
+.cover{
+  position:fixed;
+  inset:0;
+  z-index:999;
+  display:flex; align-items:flex-end; justify-content:center;
+  background:#fdf6ee;
+  transition:opacity .8s ease, transform .8s ease, visibility .8s;
+  overflow:hidden;
+}
+.cover.closed{
+  opacity:0; visibility:hidden;
+  transform:translateY(-30px);
+  pointer-events:none;
+}
+.cover-bg{
+  position:absolute; inset:0;
+  background-image:url('assets/cover/powerclip.jpg');
+  background-position:center center;
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+.cover-shade{
+  position:absolute; inset:0;
+  background:transparent;
+}
+.cover-inner{
+  height:100dvh;
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:flex-end;
+  padding:40px 28px 48px;
+  z-index:2;
+}
+.cover-text{ text-align:center; color:var(--primary); }
+.cover-wedding-of{
+  font-family:var(--font-windsong);
+  font-size:54px;
+  font-weight:500;
+  line-height:1;
+  color:var(--script-dark);
+}
+.cover-name{
+  font-family:var(--font-calabassas);
+  font-size:71px;
+  font-weight:400;
+  line-height:1.02;
+  color:var(--primary);
+  margin:2px 0 6px;
+}
+.cover-amp{ font-size:52px; }
+.cover-date{
+  font-family:var(--font-calabassas);
+  font-size:25px;
+  font-weight:400;
+  letter-spacing:.12em;
+  color:var(--primary);
+}
+
+.cover-guest{
+  margin-top:22px;
+  background:var(--card);
+  backdrop-filter:blur(4px);
+  border-radius:30px;
+  padding:14px 22px 18px;
+  text-align:center;
+  width:100%;
+  max-width:340px;
+}
+.guest-eyebrow{
+  font-family:var(--font-body);
+  font-size:15px; font-weight:300; line-height:1.5;
+  color:var(--primary);
+}
+.guest-name{
+  font-family:var(--font-body);
+  font-size:20px; font-weight:400; line-height:1.5;
+  margin:8px 0 12px;
+  color:var(--primary);
+  text-transform:uppercase;
+}
+.btn-open-link{ text-decoration:none; }
+.btn-open{
+  display:inline-block;
+  padding:7px 30px;
+  border-radius:30px;
+  background:var(--primary);
+  color:#fff;
+  font-family:var(--font-btn);
+  font-size:15px; font-weight:500;
+  letter-spacing:.04em;
+  cursor:pointer;
+  box-shadow:0 6px 16px rgba(0,0,0,.18);
+}
+
+/* ============ MAIN ============ */
+.main-hidden{ display:none; }
+.main-visible{ display:block; }
+
+.deco-top{ width:100%; position:relative; z-index:1; }
+
+/* AYAT — foto radius 30px persis Alisha */
+.ayat-photo{
+  width:79%;
+  margin:0 auto 26px;
+  border-radius:30px;
+  box-shadow:0 12px 40px rgba(124,37,37,.15);
+}
+.ayat-box{ text-align:center; padding:0 4%; }
+.ayat-text{
+  font-family:var(--font-body);
+  font-size:16px; font-weight:300; line-height:1.6;
+  color:var(--body-text);
+  font-style:italic;
+}
+.ayat-source{
+  font-family:var(--font-body);
+  font-size:14px; font-weight:300;
+  letter-spacing:2.4px;
+  color:var(--body-text);
+  margin-top:22px;
+  text-transform:uppercase;
+}
+
+/* PROFIL — texture repeat-y persis Alisha (Group-of-2-Objects-1) */
+.page-profil{
+  background-color:#fdf6ee;
+  background-image:url('assets/profil/group-profil.webp');
+  background-repeat:repeat-y;
+  background-position:center center;
+  background-size:100% auto;
+}
+
+/* SAVE THE DATE — strip atas persis Alisha (ASSET-1-1 top center) */
+.page-save-date{
+  background-image:url('assets/save-date/a11.png');
+  background-repeat:no-repeat;
+  background-position:top center;
+  background-size:100% auto;
+}
+
+/* EVENT — ornamen atas + bawah persis Alisha (EVENT-V2-2 top, EVENT-V2 bottom) */
+.page-event{
+  background-image:url('assets/resepsi/event-v2-2.webp'), url('assets/resepsi/event-v2.webp');
+  background-repeat:no-repeat, no-repeat;
+  background-position:top center, bottom center;
+  background-size:100% auto, 100% auto;
+}
+
+/* RSVP — ornamen kiri atas persis Alisha (ASSET-2-1 top left) */
+.page-rsvp{
+  background-image:url('assets/rsvp/a21.png');
+  background-repeat:no-repeat;
+  background-position:top left;
+  background-size:100% auto;
+}
+
+/* LIVE — ornamen atas persis Alisha (ASSET-3 top center) */
+.page-live{
+  background-image:url('assets/bg/a3.png');
+  background-repeat:no-repeat;
+  background-position:top center;
+  background-size:100% auto;
+}
+
+/* GIFT — ornamen bawah persis Alisha (ASSET-A342 bottom center) */
+.page-gift{
+  background-image:url('assets/gift/aa342.png');
+  background-repeat:no-repeat;
+  background-position:bottom center;
+  background-size:100% auto;
+}
+.with-love{
+  text-align:center;
+  font-family:var(--font-body);
+  font-size:14px; font-weight:300;
+  letter-spacing:2.4px;
+  color:var(--body-text);
+  margin:10px 0 18px;
+  text-transform:uppercase;
+}
+.bismillah{ text-align:center; margin:0 auto 26px; max-width:82%; }
+.bismillah-title{
+  font-family:var(--font-body);
+  font-size:16px; font-weight:400; line-height:1.5;
+  color:var(--body-text);
+}
+.bismillah-body{
+  margin-top:10px;
+  font-family:var(--font-body);
+  font-size:16px; font-weight:300; line-height:1.5;
+  color:var(--body-text);
+}
+
+.mempelai{ text-align:center; margin:18px 0; }
+.mempelai-photo{
+  width:79%; max-width:300px;
+  margin:0 auto;
+  border-radius:30px;
+  box-shadow:0 12px 40px rgba(124,37,37,.15);
+}
+.mempelai-role{
+  font-family:var(--font-windsong);
+  font-size:54px; font-weight:500;
+  color:var(--script-dark);
+  margin-top:10px; line-height:1;
+}
+.mempelai-name{
+  font-family:var(--font-calabassas);
+  font-size:32px; font-weight:400;
+  color:var(--primary);
+  margin:6px 0; line-height:1.2;
+}
+.parents{
+  font-family:var(--font-body);
+  font-size:15px; font-weight:300;
+  color:var(--primary);
+}
+.ig-link{
+  display:inline-block; margin-top:8px;
+  font-family:var(--font-body); font-size:14px; font-weight:300;
+  color:var(--primary); text-decoration:none;
+  border-bottom:1px solid rgba(172,59,59,.35);
+}
+.amp-big{
+  font-family:var(--font-calabassas);
+  font-size:71px; color:var(--primary);
+  margin:14px 0; text-align:center; line-height:1;
+}
+
+/* SAVE THE DATE */
+.sd-frame-wrap{
+  position:relative; width:100%;
+  aspect-ratio:9/11;
+  margin:6px auto 10px;
+  display:flex; align-items:center; justify-content:center;
+}
+.sd-frame{ position:absolute; inset:0; width:100%; height:100%; z-index:3; pointer-events:none; }
+.sd-photos{ position:absolute; top:14%; left:20%; width:60%; height:62%; border-radius:50%; overflow:hidden; z-index:1; background:#fff; }
+.sd-photo{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity .5s ease; }
+.sd-photo.active{ opacity:1; }
+.sd-caption{
+  position:static;
+  display:flex; flex-direction:column; align-items:center;
+  text-align:center;
+  padding:12px 0 0;
+  color:var(--primary);
+}
+.sd-date{ font-family:var(--font-calabassas); font-size:38px; font-weight:400; line-height:1.05; color:var(--primary); }
+.sd-tag{
+  font-family:var(--font-windsong);
+  font-size:44px; font-weight:400;
+  margin-top:6px; line-height:1;
+  color:var(--script-dark);
+}
+
+.countdown-head{
+  text-align:center;
+  font-family:var(--font-body);
+  font-size:16px; font-weight:300;
+  color:var(--body-text);
+  margin:14px 0 10px; line-height:1.5;
+}
+.countdown-head strong{ font-weight:400; }
+.countdown{
+  display:grid; grid-template-columns:repeat(4, 1fr); gap:8px;
+  margin-top:6px; text-align:center;
+}
+.cd-item{
+  background:#fff;
+  border-radius:14px;
+  padding:12px 4px 10px;
+  box-shadow:0 4px 14px rgba(124,37,37,.10);
+}
+.cd-item span{
+  display:block;
+  font-family:var(--font-calabassas);
+  font-size:38px; font-weight:400;
+  color:var(--primary); line-height:1;
+}
+.cd-item small{
+  display:block; margin-top:4px;
+  font-family:var(--font-body);
+  font-size:12px; font-weight:300;
+  color:var(--body-text);
+}
+
+/* EVENT — 2 kartu persis Alisha */
+.event-card{
+  background:var(--card);
+  border-radius:30px;
+  padding:30px 24px;
+  text-align:center;
+  color:var(--primary);
+  box-shadow:0 12px 40px rgba(124,37,37,.12);
+  margin-bottom:20px;
+}
+.event-title{
+  font-family:var(--font-body);
+  font-size:15px; font-weight:500;
+  letter-spacing:2px;
+  color:var(--primary);
+  margin-bottom:10px;
+}
+.event-date,.event-time{
+  font-family:var(--font-body);
+  font-size:16px; font-weight:300;
+  color:var(--body-text);
+  margin:4px 0;
+}
+.event-venue{
+  font-family:var(--font-body);
+  font-size:16px; font-weight:400;
+  margin-top:12px; color:var(--primary);
+}
+.event-address{
+  font-family:var(--font-body);
+  font-size:15px; font-weight:300;
+  margin:6px 0 18px; color:var(--body-text); line-height:1.6;
+}
+.event-photo{
+  width:79%; margin:6px auto 0;
+  border-radius:30px;
+  box-shadow:0 12px 40px rgba(124,37,37,.15);
+}
+
+.btn-primary{
+  display:inline-block;
+  padding:7px 30px;
+  border-radius:30px;
+  background:var(--primary);
+  color:#fff; border:none;
+  font-family:var(--font-btn);
+  font-size:15px; font-weight:500;
+  letter-spacing:.04em;
+  text-decoration:none; cursor:pointer;
+  transition:transform .2s, background .2s;
+}
+.btn-primary:active{ transform:scale(.97); background:var(--maroon-dark); }
+.btn-full{ width:100%; margin-top:8px; padding:12px 30px; }
+
+/* RSVP */
+.rsvp-photo{
+  width:79%; margin:0 auto 22px;
+  border-radius:30px;
+  box-shadow:0 12px 40px rgba(124,37,37,.15);
+}
+.rsvp-title{
+  font-family:var(--font-calabassas);
+  font-size:48px; font-weight:400;
+  text-transform:uppercase; letter-spacing:1.4px;
+  text-align:center; color:var(--primary);
+  margin-bottom:12px;
+}
+.rsvp-desc{
+  text-align:center; color:var(--body-text);
+  font-family:var(--font-body);
+  font-size:16px; font-weight:300; line-height:1.5;
+  margin-bottom:24px;
+}
+.rsvp-form{
+  background:var(--card);
+  border-radius:30px;
+  padding:26px 22px;
+  box-shadow:0 12px 40px rgba(124,37,37,.12);
+}
+.rsvp-form label{ display:block; margin-bottom:18px; }
+.rsvp-form label span, .radio-label{
+  display:block; color:var(--primary);
+  font-family:var(--font-body);
+  font-size:15px; font-weight:400; margin-bottom:6px;
+}
+.rsvp-form input, .rsvp-form select, .rsvp-form textarea,
+.wish-form input, .wish-form textarea{
+  width:100%; padding:10px 12px;
+  border:1px solid rgba(172,59,59,.3); border-radius:8px;
+  font-family:var(--font-body); font-size:15px; font-weight:300;
+  background:#fff; color:var(--text-dark); outline:none;
+}
+.rsvp-form input:focus, .rsvp-form select:focus, .rsvp-form textarea:focus,
+.wish-form input:focus, .wish-form textarea:focus{ border-color:var(--primary); }
+.radio-group{ margin-bottom:18px; }
+.radio{
+  display:flex !important; align-items:center; gap:8px;
+  font-family:var(--font-body) !important;
+  font-size:15px !important; font-weight:300 !important;
+  color:var(--text-dark) !important; margin-bottom:8px !important;
+}
+.radio input{ width:auto !important; accent-color:var(--primary); }
+.rsvp-status{ text-align:center; font-size:13px; margin-top:14px; min-height:16px; }
+.rsvp-status.ok  { color:#17A409; }
+.rsvp-status.err { color:#c62828; }
+
+/* LIVE */
+.live-title{
+  font-family:var(--font-calabassas);
+  font-size:48px; font-weight:400;
+  text-transform:uppercase; letter-spacing:1.4px;
+  text-align:center; color:var(--primary);
+  line-height:1.1; margin-bottom:18px;
+}
+.live-title .live-script{
+  font-family:var(--font-windsong);
+  font-size:54px; font-weight:500;
+  text-transform:none; letter-spacing:0;
+  display:block;
+}
+.live-desc{
+  text-align:center; color:var(--body-text);
+  font-family:var(--font-body); font-size:15px; font-weight:300;
+  margin-bottom:16px; line-height:1.6;
+}
+
+/* GALLERY */
+.gallery-title{
+  font-family:var(--font-calabassas);
+  font-size:74px; font-weight:400;
+  color:var(--primary); text-align:center;
+  margin-bottom:18px; line-height:1;
+}
+.gallery-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:6px; }
+.gallery-grid img{
+  width:100%; aspect-ratio:3/4; object-fit:cover; object-position:center 20%;
+  border-radius:6px; cursor:zoom-in;
+  background:#fff; transition:transform .3s, filter .3s;
+}
+.gallery-grid img:hover{ transform:scale(1.03); filter:brightness(.75); }
+/* Pola campuran persis Alisha: selingan foto landscape full-width */
+.gallery-grid img:nth-child(6),
+.gallery-grid img:nth-child(11){
+  grid-column:1 / -1;
+  aspect-ratio:16/10;
+}
+.lightbox{ position:fixed; inset:0; z-index:2000; background:rgba(0,0,0,.9); display:none; align-items:center; justify-content:center; padding:20px; }
+.lightbox.open{ display:flex; }
+.lightbox img{ max-width:100%; max-height:90vh; border-radius:8px; }
+.lightbox-close{ position:absolute; top:14px; right:20px; color:#fff; font-size:38px; cursor:pointer; }
+
+/* STORY */
+.story-title{
+  font-family:var(--font-calabassas);
+  font-size:56px; font-weight:400;
+  color:var(--primary); text-align:center;
+  margin-bottom:16px;
+}
+.story-thumbs{ display:flex; gap:8px; overflow-x:auto; padding-bottom:10px; margin-bottom:20px; justify-content:flex-start; }
+.story-thumbs img{
+  width:72px; height:72px; object-fit:cover;
+  border-radius:50%; flex-shrink:0;
+  border:3px solid #fff;
+  box-shadow:0 12px 40px rgba(124,37,37,.15);
+}
+.story-item{
+  background:var(--card);
+  border-radius:30px; padding:22px 20px;
+  margin-bottom:14px;
+  box-shadow:0 12px 40px rgba(124,37,37,.12);
+}
+.story-item h3{
+  font-family:var(--font-body);
+  font-size:16px; font-weight:400;
+  color:var(--primary); margin-bottom:8px;
+}
+.story-item p{
+  font-size:14px; font-weight:300;
+  color:var(--body-text); line-height:1.6;
+  font-family:var(--font-body);
+}
+
+/* GIFT */
+.gift-title{
+  font-family:var(--font-body);
+  font-size:15px; font-weight:500; letter-spacing:2px;
+  color:var(--primary); text-align:center;
+  margin-bottom:6px; line-height:1.4;
+  text-transform:uppercase;
+}
+.gift-title .gift-script{
+  display:block;
+  font-family:var(--font-windsong);
+  font-size:54px; font-weight:500;
+  text-transform:none; letter-spacing:0;
+  color:var(--script-dark);
+}
+.gift-desc{
+  text-align:center; color:var(--body-text);
+  font-family:var(--font-body);
+  font-size:15px; font-weight:300; line-height:1.6;
+  margin-bottom:18px;
+}
+.toggle-gift{ margin-bottom:18px; }
+.area-gift-card{ display:none; }
+.area-gift-card.is-open{ display:block; animation:fadeIn .5s ease; }
+.gift-card{
+  background:var(--card-solid);
+  border-radius:30px; padding:24px 20px;
+  text-align:center; margin-bottom:18px;
+  box-shadow:0 12px 40px rgba(124,37,37,.12);
+  opacity:0; transform:translateY(16px);
+  transition:opacity .5s, transform .5s;
+}
+.area-gift-card.is-open .gift-card{ opacity:1; transform:none; }
+.bank-label{
+  font-family:var(--font-body);
+  font-size:15px; font-weight:500; letter-spacing:2px;
+  color:var(--primary); margin-bottom:8px;
+}
+.bank-logo{ width:120px; margin:0 auto 14px; }
+.bank-number{
+  font-family:var(--font-calabassas);
+  font-size:28px; font-weight:400;
+  color:var(--primary); margin-bottom:2px;
+}
+.bank-name{
+  font-family:var(--font-body);
+  font-size:15px; font-weight:300;
+  color:var(--body-text); margin-bottom:16px; line-height:1.6;
+}
+.gift-icon{ width:56px; margin:0 auto 12px; }
+.attention{
+  background:rgba(255,255,255,.85);
+  border-radius:30px; padding:20px 18px;
+  font-size:13px; font-weight:300;
+  color:var(--body-text); line-height:1.7;
+  font-family:var(--font-body);
+}
+.attention p{ margin-bottom:6px; }
+
+/* WISHES */
+.wishes-head{
+  font-family:var(--font-body);
+  font-size:15px; font-weight:500; letter-spacing:2px;
+  color:var(--primary); text-align:center;
+  line-height:1.4; margin-bottom:8px;
+  text-transform:uppercase;
+}
+.wishes-head .wishes-script{
+  display:block;
+  font-family:var(--font-windsong);
+  font-size:54px; font-weight:500;
+  text-transform:none; letter-spacing:0;
+  color:var(--script-dark);
+}
+.wishes-sub{
+  text-align:center; color:var(--body-text);
+  font-family:var(--font-body);
+  font-size:15px; font-weight:300;
+  margin-bottom:22px;
+}
+.wish-form{
+  background:var(--card);
+  border-radius:30px; padding:24px 22px;
+  box-shadow:0 12px 40px rgba(124,37,37,.12);
+  margin-bottom:22px;
+}
+.wish-form label{ display:block; margin-bottom:14px; }
+.wish-form label span{
+  display:block; color:var(--primary);
+  font-family:var(--font-body);
+  font-size:15px; font-weight:400; margin-bottom:6px;
+}
+.wishes-wrap{ margin-top:10px; }
+.wishes-list{
+  max-height:400px; overflow-y:auto;
+  padding:10px 8px; border-radius:30px;
+  background:rgba(255,255,255,.55);
+}
+.wishes-list::-webkit-scrollbar{ width:6px; }
+.wishes-list::-webkit-scrollbar-thumb{ background:#c45555; border-radius:8px; }
+.wish-item{
+  display:flex; gap:10px; align-items:flex-start;
+  background:rgba(255,255,255,.92);
+  border-radius:16px; padding:12px 14px;
+  margin-bottom:10px;
+  box-shadow:0 2px 8px rgba(0,0,0,.05);
+}
+.wish-avatar{
+  flex-shrink:0;
+  width:36px; height:36px; border-radius:50%;
+  background:var(--primary); color:#fff;
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--font-body); font-size:15px; font-weight:500;
+}
+.wish-body{ flex:1; min-width:0; }
+.wish-name{
+  color:var(--primary); font-weight:500;
+  font-size:13px; margin-bottom:4px;
+  font-family:var(--font-body);
+}
+.wish-text{ color:var(--text-grey); font-size:13px; line-height:1.5; font-weight:300; }
+
+/* CC0 flourish divider */
+.section-divider{
+  display:block;
+  width:52%; max-width:220px; height:auto;
+  margin:2px auto 16px;
+}
+
+/* THANKYOU */
+.ty-photo{ width:79%; max-width:340px; margin:0 auto 20px; border-radius:30px; }
+.ty-title{
+  font-family:var(--font-windsong);
+  font-size:54px; font-weight:500;
+  text-align:center; color:var(--script-dark);
+  margin-bottom:12px;
+}
+.ty-desc{
+  text-align:center; color:var(--body-text);
+  font-family:var(--font-body);
+  font-size:15px; font-weight:300; line-height:1.6;
+  margin-bottom:16px;
+}
+.ty-seeyou{
+  text-align:center; color:var(--body-text);
+  font-family:var(--font-body);
+  font-size:15px; font-weight:300; margin-bottom:14px;
+}
+.ty-couple{
+  font-family:var(--font-windsong);
+  font-size:54px; font-weight:500;
+  text-align:center; color:var(--primary);
+  line-height:1.1;
+  margin-bottom:26px;
+}
+/* Footer maroon persis Alisha */
+.site-footer{
+  position:relative;
+  background:var(--maroon-dark);
+  padding:22px 20px 96px;
+  text-align:center;
+}
+/* CC0 gold corners di atas footer */
+.foot-corner{
+  position:absolute; top:-44px;
+  width:104px; height:auto;
+  pointer-events:none;
+}
+.foot-corner-left{ left:6px; }
+.foot-corner-right{ right:6px; transform:scaleX(-1); }
+.ty-credit{
+  text-align:center; font-size:12px; font-weight:300;
+  color:#fff; opacity:.92;
+  letter-spacing:.08em;
+  font-family:var(--font-body);
+}
+
+/* Bottom nav — pill persis Alisha */
+.bottom-nav{
+  position:fixed; bottom:14px; left:50%; transform:translateX(-50%);
+  width:calc(100% - 32px); max-width:420px; z-index:1000;
+  display:none;
+  justify-content:space-around; align-items:center;
+  background:var(--primary);
+  border-radius:999px; padding:10px 14px;
+  box-shadow:0 8px 30px rgba(0,0,0,.25);
+}
+.bottom-nav.show{ display:flex; }
+.bottom-nav a{ color:#fff; opacity:.85; display:flex; padding:6px; }
+.bottom-nav a svg{ width:22px; height:22px; }
+.bottom-nav a.active{ opacity:1; transform:scale(1.15); }
+
+/* Animasi scroll */
+[data-anim]{ opacity:0; transition:opacity .9s ease, transform .9s ease; will-change:opacity, transform; }
+[data-anim="fade-up"]      { transform:translateY(40px); }
+[data-anim="fade-down"]    { transform:translateY(-40px); }
+[data-anim].in-view{ opacity:1; transform:translate(0,0); }
+@keyframes fadeIn{ from { opacity:0; } to { opacity:1; } }
+
+@media (min-width:521px) and (max-width:1279px){
+  /* Tablet persis referensi: kolom 600px + texture powerclip full-bleed */
+  body{
+    background-color:#fdf6ee;
+    background-image:url('assets/cover/powerclip.jpg');
+    background-position:center center;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+  }
+  .page, .cover-inner{
+    max-width:600px;
+    box-shadow:0 0 60px rgba(0,0,0,.08);
+  }
+  .cover{ background:transparent; }
+  .cover-guest{ max-width:520px; }
+  .bottom-nav{ max-width:560px; }
+  .music-toggle{ right:max(16px, calc(50% - 264px)); }
+}
+
+/* Desktop split persis Alisha: foto 70% kiri + panel 30% kanan */
+@media (min-width:1280px){
+  body{ background-color:#fdf6ee; }
+  body::before{
+    content:'';
+    position:fixed; top:0; bottom:0; left:0; width:70vw; z-index:0;
+    background:url('assets/save-date/sd-1.jpg') center center/cover no-repeat;
+  }
+  body::after{
+    content:'';
+    position:fixed; top:0; bottom:0; left:0; width:70vw; z-index:0;
+    background:linear-gradient(180deg, rgba(0,0,0,.30) 0%, rgba(0,0,0,0) 35%, rgba(0,0,0,0) 60%, rgba(0,0,0,.55) 100%);
+  }
+  .page, .cover-inner{
+    position:relative; z-index:1;
+    max-width:380px;
+    margin-left:auto;
+    margin-right:calc((30vw - 380px) / 2);
+  }
+  /* Cover lock: foto kiri + panel powerclip kanan */
+  .cover{ background:transparent; justify-content:flex-end; }
+  .cover-bg{ left:70vw; right:0; width:auto; }
+  .cover-inner{ margin-top:0; margin-bottom:0; margin-left:0; }
+  /* Profil: groom & bride sejajar persis referensi desktop */
+  .page-profil .page-inner{
+    display:flex; flex-wrap:wrap; align-items:flex-start;
+  }
+  .page-profil .with-love,
+  .page-profil .bismillah{ width:100%; }
+  .page-profil .mempelai{ width:42%; }
+  .page-profil .mempelai-photo{ width:100%; }
+  .page-profil .mempelai-name{ font-size:22px; }
+  .page-profil .amp-big{
+    width:16%; align-self:center;
+    font-size:44px; margin:0;
+  }
+  .bottom-nav{
+    left:auto; right:calc((30vw - 380px) / 2 + 16px);
+    transform:none; width:calc(30vw - 32px); max-width:348px;
+  }
+  .music-toggle{
+    right:calc((30vw - 380px) / 2 + 16px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{ animation-duration:.001s !important; transition-duration:.001s !important; }
+}

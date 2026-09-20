@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#AC3B3B" />
+<meta name="description" content="You are invited. The Wedding of Alvino & Intan — Minggu, 25 Oktober 2026." />
+<meta property="og:title" content="ALVINO & INTAN" />
+<meta property="og:description" content="You are invited." />
+<meta property="og:image" content="assets/save-date/sd-1.jpg" />
+<title>ALVINO &amp; INTAN</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<audio id="weddingAudio" loop preload="auto" src="assets/music/song.mp3"></audio>
+
+<button id="audioButton" class="music-toggle" aria-label="Putar / jeda musik">
+  <svg class="icon-note" viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true">
+    <path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/>
+  </svg>
+  <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true">
+    <rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/>
+  </svg>
+</button>
+
+<!-- ========== COVER (Alisha #cover lock) ========== -->
+<section id="cover" class="cover">
+  <div class="cover-bg"></div>
+  <div class="cover-shade"></div>
+  <div class="cover-inner">
+    <div class="cover-text">
+      <p class="cover-wedding-of">the wedding of</p>
+      <h1 class="cover-name">ALVINO<br><span class="cover-amp">&amp;</span><br>Intan</h1>
+      <p class="cover-date">25 OKT 2026</p>
+    </div>
+
+    <div class="cover-guest">
+      <p class="guest-eyebrow">Kepada Yth.<br>Bapak/ Ibu/ Saudara/ i</p>
+      <p class="guest-name" id="guestName">BELOVED GUEST</p>
+      <a href="#ayatsuci" id="btn-cover" class="btn-open-link">
+        <span id="btn-play" class="btn-open">OPEN INVITATION</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== MAIN ========== -->
+<main id="main" class="main-hidden">
+
+  <!-- AYAT SUCI -->
+  <section id="ayatsuci" class="page page-ayat">
+    <img class="deco-top" src="assets/ayat/page4.webp" alt="" data-anim="fade-down" />
+    <div class="page-inner">
+      <img class="ayat-photo" src="assets/ayat/photo-ayat-framed.png" alt="Alvino & Intan" data-anim="fade-up" />
+      <div class="ayat-box" data-anim="fade-up">
+        <p class="ayat-text">
+          &ldquo;Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu berpasang-pasangan dari jenismu sendiri, supaya kamu merasa tenang dan tentram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir.&rdquo;
+        </p>
+        <p class="ayat-source">QS. Ar-Rum: 21</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROFIL -->
+  <section id="profil" class="page page-profil">
+    <div class="page-inner">
+      <p class="with-love" data-anim="fade-up">WITH LOVE</p>
+      <div class="bismillah" data-anim="fade-up">
+        <p class="bismillah-title">Assalamualaikum Wr. Wb.</p>
+        <p class="bismillah-body">
+          Dengan rahmat Tuhan Yang Maha Esa kami mengundang Bapak/Ibu/Saudara/i
+          untuk menghadiri pernikahan kami:
+        </p>
+      </div>
+
+      <div class="mempelai" data-anim="fade-up">
+        <img src="assets/profil/groom-framed.png" alt="The Groom" class="mempelai-photo" />
+        <p class="mempelai-role">the groom</p>
+        <h2 class="mempelai-name">Alvino Fii Ramadhan S.Tr.M.</h2>
+        <p class="parents">Putra dari Bapak Agus Yani &amp; Ibu Suliyati</p>
+        <a class="ig-link" href="https://www.instagram.com/" target="_blank" rel="noopener">@instagram</a>
+      </div>
+
+      <p class="amp-big" data-anim="fade-up">&amp;</p>
+
+      <div class="mempelai" data-anim="fade-up">
+        <img src="assets/profil/bride-framed.png" alt="The Bride" class="mempelai-photo" />
+        <p class="mempelai-role">the bride</p>
+        <h2 class="mempelai-name">Intan Rahmadhani S.Farm.</h2>
+        <p class="parents">Putri dari Bapak Suko Dwi Tjahjono (Alm) &amp; Ibu Nanik Suyanti</p>
+        <a class="ig-link" href="https://www.instagram.com/" target="_blank" rel="noopener">@instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAVE THE DATE + COUNTDOWN -->
+  <section class="page page-save-date">
+    <div class="page-inner">
+      <div class="sd-frame-wrap" data-anim="fade-up">
+        <img src="assets/save-date/bitmap.webp" alt="" class="sd-frame" />
+        <div class="sd-photos">
+          <img src="assets/save-date/sd-1.jpg" class="sd-photo active" alt="" />
+          <img src="assets/save-date/sd-2.jpg" class="sd-photo" alt="" />
+          <img src="assets/save-date/sd-3.jpg" class="sd-photo" alt="" />
+          <img src="assets/save-date/sd-4.jpg" class="sd-photo" alt="" />
+          <img src="assets/save-date/sd-5.jpg" class="sd-photo" alt="" />
+        </div>
+      </div>
+      <div class="sd-caption" data-anim="fade-up">
+        <p class="sd-date">25<br>OKT<br>2026</p>
+        <p class="sd-tag">save the date</p>
+      </div>
+
+      <div class="countdown-head" data-anim="fade-up">
+        <p>Menuju hari<br><strong>bahagia</strong></p>
+      </div>
+      <div class="countdown" data-anim="fade-up">
+        <div class="cd-item"><span id="cdDays">00</span><small>Hari</small></div>
+        <div class="cd-item"><span id="cdHours">00</span><small>Jam</small></div>
+        <div class="cd-item"><span id="cdMinutes">00</span><small>Menit</small></div>
+        <div class="cd-item"><span id="cdSeconds">00</span><small>Detik</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENT : AKAD + RESEPSI (persis Alisha: PEMBERKATAN + RESEPSI) -->
+  <section id="event" class="page page-event">
+    <img class="deco-top" src="assets/resepsi/event-v2-2.webp" alt="" data-anim="fade-down" />
+    <div class="page-inner">
+      <div class="event-card" data-anim="fade-up">
+        <h2 class="event-title">AKAD NIKAH</h2>
+        <p class="event-date">Minggu, 25 Oktober 2026</p>
+        <p class="event-time">08.00 WIB</p>
+        <p class="event-venue">Hotel Trio Indah 2 Malang</p>
+        <p class="event-address">Jl. Brigjen Slamet Riadi No. 1-3, Klojen, Malang</p>
+        <a href="https://maps.google.com/?q=Hotel+Trio+Indah+2+Malang" target="_blank" rel="noopener" class="btn-primary">LIHAT LOKASI</a>
+      </div>
+
+      <div class="event-card" data-anim="fade-up">
+        <h2 class="event-title">RESEPSI</h2>
+        <p class="event-date">Minggu, 25 Oktober 2026</p>
+        <p class="event-time">11.30 WIB</p>
+        <p class="event-venue">Hotel Trio Indah 2 Malang</p>
+        <p class="event-address">Jl. Brigjen Slamet Riadi No. 1-3, Klojen, Malang</p>
+        <a href="https://maps.google.com/?q=Hotel+Trio+Indah+2+Malang" target="_blank" rel="noopener" class="btn-primary">LIHAT LOKASI</a>
+      </div>
+
+      <img class="event-photo" src="assets/resepsi/photo-resepsi.jpg" alt="Alvino & Intan" data-anim="fade-up" />
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section id="rsvp" class="page page-rsvp">
+    <div class="page-inner">
+      <img class="rsvp-photo" src="assets/rsvp/photo-rsvp.jpg" alt="Intan" data-anim="fade-up" onerror="this.style.display='none'" />
+      <h2 class="rsvp-title" data-anim="fade-up">RSVP</h2>
+      <p class="rsvp-desc" data-anim="fade-up">
+        Merupakan suatu kehormatan dan kebahagiaan bagi kami sekeluarga apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada kedua mempelai. Atas kehadiran serta doa restu, kami ucapkan terima kasih.
+      </p>
+
+      <form id="rsvpForm" class="rsvp-form" data-anim="fade-up">
+        <label>
+          <span>Nama*</span>
+          <input type="text" name="nama" required autocomplete="name" />
+        </label>
+
+        <label>
+          <span>Jumlah tamu (orang)*</span>
+          <select name="jumlah" required>
+            <option value="">-- Pilih --</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+          </select>
+        </label>
+
+        <div class="radio-group">
+          <span class="radio-label">Konfirmasi Kehadiran*</span>
+          <label class="radio"><input type="radio" name="kehadiran" value="Hadir" required /> Hadir</label>
+          <label class="radio"><input type="radio" name="kehadiran" value="Tidak Hadir" required /> Maaf, saya tidak bisa hadir</label>
+        </div>
+
+        <button type="submit" class="btn-primary btn-full">SUBMIT</button>
+        <p id="rsvpStatus" class="rsvp-status"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- LIVE STREAMING -->
+  <section class="page page-live">
+    <div class="page-inner">
+      <h2 class="live-title" data-anim="fade-up">Live<br><span class="live-script">Streaming</span></h2>
+      <p class="live-desc" data-anim="fade-up">
+        Acara akan disiarkan secara live melalui youtube, Minggu, 25 Oktober 2026 | Pukul 11.30 WIB
+      </p>
+      <div class="center" data-anim="fade-up">
+        <a href="#" id="liveYoutubeBtn" class="btn-primary">OPEN YOUTUBE</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="page page-gallery">
+    <div class="page-inner">
+      <h2 class="gallery-title" data-anim="fade-up">Gallery</h2>
+      <div class="gallery-grid" data-anim="fade-up">
+        <img src="assets/gallery/gallery-1.png" alt="" loading="lazy" />
+        <img src="assets/gallery/gallery-2.png" alt="" loading="lazy" />
+        <img src="assets/gallery/gallery-3.png" alt="" loading="lazy" />
+        <img src="assets/gallery/gallery-4.png" alt="" loading="lazy" />
+        <img src="assets/gallery/gallery-5.png" alt="" loading="lazy" />
+        <img src="assets/gallery/gallery-6.png" alt="" loading="lazy" />
+        <img src="assets/gallery/gallery-7.png" alt="" loading="lazy" />
+        <img src="assets/gallery/gallery-8.png" alt="" loading="lazy" />
+        <img src="assets/gallery/gallery-9.png" alt="" loading="lazy" />
+        <img src="assets/save-date/sd-1.jpg" alt="" loading="lazy" />
+        <img src="assets/save-date/sd-2.jpg" alt="" loading="lazy" />
+        <img src="assets/save-date/sd-3.jpg" alt="" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- KISAH CINTA -->
+  <section class="page page-story">
+    <div class="page-inner">
+      <h2 class="story-title" data-anim="fade-up">Kisah Cinta</h2>
+      <!-- CC0: flourish divider (freepngimg.com, recolored maroon) -->
+      <img class="section-divider" src="assets/bg/divider-flourish.svg" alt="" data-anim="fade-up" />
+      <div class="story-thumbs" data-anim="fade-up">
+        <img src="assets/save-date/sd-1.jpg" alt="" />
+        <img src="assets/save-date/sd-2.jpg" alt="" />
+        <img src="assets/save-date/sd-3.jpg" alt="" />
+        <img src="assets/save-date/sd-4.jpg" alt="" />
+        <img src="assets/save-date/sd-5.jpg" alt="" />
+      </div>
+
+      <div class="story-item" data-anim="fade-up">
+        <h3>Awal pertemuan</h3>
+        <p>Atas kehendak Allah, kami dipertemukan dalam sebuah momen sederhana yang ternyata menjadi awal dari segalanya. Dari perkenalan yang singkat, tumbuh rasa nyaman dan keyakinan.</p>
+      </div>
+      <div class="story-item" data-anim="fade-up">
+        <h3>Menjalin Hubungan</h3>
+        <p>Seiring berjalannya waktu, kami saling mengenal lebih dalam — melewati suka dan duka bersama, saling menguatkan, dan memantapkan hati untuk melangkah lebih jauh. Dengan restu kedua keluarga, kami memutuskan untuk menyempurnakan separuh agama.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GIFT -->
+  <section class="page page-gift">
+    <div class="page-inner">
+      <h2 class="gift-title" data-anim="fade-up">Hadiah<br><span class="gift-script">Pernikahan</span></h2>
+      <p class="gift-desc" data-anim="fade-up">
+        Kehadiran dan doa Anda adalah hadiah terindah bagi kami. Namun, apabila berkenan memberikan tanda kasih, silakan gunakan informasi di bawah ini:
+      </p>
+      <div class="center" data-anim="fade-up">
+        <button id="toggleGift" class="btn-primary toggle-gift">TAMPILKAN GIFT</button>
+      </div>
+
+      <div id="giftArea" class="area-gift-card">
+        <div class="gift-card" data-anim="fade-up">
+          <p class="bank-label">BANK BCA</p>
+          <p class="bank-number">4390990117</p>
+          <p class="bank-name">An. Intan Rahmadhani</p>
+          <button class="btn-primary btn-copy" data-copy="4390990117">SALIN</button>
+        </div>
+
+        <div class="gift-card" data-anim="fade-up">
+          <p class="bank-label">BANK BCA</p>
+          <p class="bank-number">8161765813</p>
+          <p class="bank-name">An. Alvino Fii Ramadhan</p>
+          <button class="btn-primary btn-copy" data-copy="8161765813">SALIN</button>
+        </div>
+
+        <div class="gift-card" data-anim="fade-up">
+          <img src="assets/gift/gift-icon.png" alt="" class="gift-icon" />
+          <p class="bank-name"><strong>Nama Penerima</strong><br>Alvino / Intan</p>
+          <p class="bank-name">
+            <strong>Alamat Penerima</strong><br>
+            Jl. Raya Tlogomas No.29A, Tlogomas,<br>
+            Kec. Lowokwaru, Kota Malang,<br>
+            Jawa Timur 65144
+          </p>
+          <button class="btn-primary btn-copy" data-copy="Jl. Raya Tlogomas No.29A, Tlogomas, Kec. Lowokwaru, Kota Malang, Jawa Timur 65144">SALIN ALAMAT</button>
+        </div>
+
+        <div class="attention" data-anim="fade-up">
+          <p><strong>&#9432; ATTENTION!</strong></p>
+          <p>* Pastikan nama dan nomor rekening sudah sesuai dengan nama mempelai ketika melakukan proses transfer.</p>
+          <p>* Mohon untuk melakukan konfirmasi hadiah anda dengan mengirim bukti transfer/ resi pengiriman kepada mempelai melalui personal message. Terima kasih.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UCAPAN & DOA -->
+  <section id="wishes" class="page page-wishes">
+    <div class="page-inner">
+      <h2 class="wishes-head" data-anim="fade-up">Ucapan<br><span class="wishes-script">&amp; Doa</span></h2>
+      <p class="wishes-sub" data-anim="fade-up">
+        Sampaikan doa dan harapan terbaik di sini, saat kami memulai perjalanan baru bersama.
+      </p>
+      <!-- CC0: flourish divider (freepngimg.com, recolored maroon) -->
+      <img class="section-divider" src="assets/bg/divider-flourish.svg" alt="" data-anim="fade-up" />
+
+      <form id="wishForm" class="wish-form" data-anim="fade-up">
+        <label>
+          <span>Nama*</span>
+          <input type="text" name="nama" required />
+        </label>
+        <label>
+          <span>Ucapan &amp; doa*</span>
+          <textarea name="ucapan" rows="4" required placeholder="Tulis ucapan & doa..."></textarea>
+        </label>
+        <button type="submit" class="btn-primary btn-full">KIRIM UCAPAN</button>
+        <p id="wishStatus" class="rsvp-status"></p>
+      </form>
+
+      <div class="wishes-wrap" data-anim="fade-up">
+        <div id="wishesList" class="wishes-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THANKYOU -->
+  <section class="page page-thankyou">
+    <div class="page-inner">
+      <img src="assets/thankyou/photo-thankyou-framed.png" alt="" class="ty-photo" data-anim="fade-up" />
+      <h2 class="ty-title" data-anim="fade-up">Thankyou!</h2>
+      <p class="ty-desc" data-anim="fade-up">
+        Menjadi sebuah kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dalam hari bahagia ini. Terima kasih atas segala ucapan, doa, dan perhatian yang diberikan.
+      </p>
+      <p class="ty-seeyou" data-anim="fade-up"><strong>See you on our big day!</strong></p>
+      <h2 class="ty-couple" data-anim="fade-up">alvino &amp; intan</h2>
+      <!-- CC0: flourish divider (freepngimg.com, recolored maroon) -->
+      <img class="section-divider" src="assets/bg/divider-flourish.svg" alt="" data-anim="fade-up" />
+    </div>
+    <footer class="site-footer">
+      <!-- CC0: gold corner ornament (Wikimedia Commons, FlowerS Ornament Gold) -->
+      <img class="foot-corner foot-corner-left" src="assets/thankyou/corner-gold.png" alt="" />
+      <img class="foot-corner foot-corner-right" src="assets/thankyou/corner-gold.png" alt="" />
+      <p class="ty-credit">Made with &#10084; for Alvino &amp; Intan</p>
+    </footer>
+  </section>
+
+</main>
+
+<nav id="bottomNav" class="bottom-nav">
+  <a href="#cover" data-nav="cover" aria-label="Cover">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/><path d="M12 11.8s-2.4-1.5-2.4-2.9a1.35 1.35 0 0 1 2.4-.85 1.35 1.35 0 0 1 2.4.85c0 1.4-2.4 2.9-2.4 2.9z" fill="currentColor" stroke="none"/></svg>
+  </a>
+  <a href="#profil" data-nav="profil" aria-label="Mempelai">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8.5" cy="8" r="3"/><circle cx="15.5" cy="8" r="3"/><path d="M3 20c0-3 2.5-5 5.5-5s5.5 2 5.5 5M13 20c0-3 2.5-5 5.5-5"/></svg>
+  </a>
+  <a href="#event" data-nav="event" aria-label="Acara">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>
+  </a>
+  <a href="#rsvp" data-nav="rsvp" aria-label="RSVP">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+  </a>
+  <a href="#wishes" data-nav="wishes" aria-label="Ucapan">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12a8 8 0 0 1-8 8H4l2-3a8 8 0 1 1 15-5z"/><path d="M12 10.4s-1.8-1.2-1.8-2.2a1 1 0 0 1 1.8-.65 1 1 0 0 1 1.8.65c0 1-1.8 2.2-1.8 2.2z" fill="currentColor" stroke="none"/></svg>
+  </a>
+</nav>
+
+<div id="lightbox" class="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img id="lightboxImg" src="" alt="" />
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

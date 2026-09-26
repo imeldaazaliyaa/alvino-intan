@@ -378,7 +378,7 @@ if (wishForm) {
   });
 }
 
-/* ---------- 12. GALLERY LIGHTBOX (navigasi) ---------- */
+/* ---------- 12. GALLERY LIGHTBOX (tap untuk tutup, geser untuk pindah) ---------- */
 (function lightbox() {
   const lb = document.getElementById('lightbox');
   const lbImg = document.getElementById('lightboxImg');
@@ -398,11 +398,29 @@ if (wishForm) {
     document.body.style.overflow = 'auto';
   };
 
-  imgs.forEach((img, i) => img.addEventListener('click', () => show(i)));
-  lb.addEventListener('click', (e) => {
-    if (e.target === lb || e.target.classList.contains('lightbox-close')) close();
-    else if (e.target === lbImg) show(idx + 1);
+  /* Cegah lightbox terbuka saat pengguna menggeser halaman untuk scroll */
+  let pressX = 0, pressY = 0, dragged = false;
+  imgs.forEach((img, i) => {
+    img.addEventListener('touchstart', (e) => {
+      pressX = e.touches[0].clientX;
+      pressY = e.touches[0].clientY;
+      dragged = false;
+    }, { passive: true });
+    img.addEventListener('touchmove', (e) => {
+      if (Math.hypot(e.touches[0].clientX - pressX, e.touches[0].clientY - pressY) > 12) dragged = true;
+    }, { passive: true });
+    img.addEventListener('click', () => {
+      const skip = dragged;
+      dragged = false;
+      if (!skip) show(i);
+    });
   });
+
+  /* Ketuk latar, foto, atau tombol × = tutup */
+  lb.addEventListener('click', (e) => {
+    if (e.target === lb || e.target === lbImg || e.target.classList.contains('lightbox-close')) close();
+  });
+
   document.addEventListener('keydown', (e) => {
     if (!lb.classList.contains('open')) return;
     if (e.key === 'Escape') close();
@@ -410,11 +428,17 @@ if (wishForm) {
     if (e.key === 'ArrowLeft') show(idx - 1);
   });
 
-  let startX = 0;
-  lb.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive: true });
+  /* Geser: kiri/kanan = pindah foto, ke bawah = tutup */
+  let startX = 0, startY = 0;
+  lb.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+  }, { passive: true });
   lb.addEventListener('touchend', (e) => {
     const dx = e.changedTouches[0].clientX - startX;
-    if (Math.abs(dx) > 50) show(dx < 0 ? idx + 1 : idx - 1);
+    const dy = e.changedTouches[0].clientY - startY;
+    if (dy > 80 && Math.abs(dx) < 70) { close(); return; }
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) show(dx < 0 ? idx + 1 : idx - 1);
   }, { passive: true });
 })();
 
@@ -460,7 +484,7 @@ if (wishForm) {
       if (flowersImg && !reduceMotion) {
         const max = document.documentElement.scrollHeight - window.innerHeight;
         const p = max > 0 ? Math.min(window.scrollY / max, 1) : 0;
-        flowersImg.style.transform = 'translateY(' + (-p * 12).toFixed(1) + 'px) scale(' + (1 + p * 0.05).toFixed(3) + ')';
+        flowersImg.style.transform = 'translateY(' + (p * 10).toFixed(1) + 'px) scale(' + (1 + p * 0.05).toFixed(3) + ')';
       }
       ticking = false;
     });
@@ -469,6 +493,14 @@ if (wishForm) {
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll);
   onScroll();
+
+  /* Refresh / kembali dari bfcache: paksa scroll ke atas lalu sinkronkan
+     ulang nav aktif + parallax, supaya tidak tertinggal state lama. */
+  window.addEventListener('pageshow', () => {
+    if (window.location.hash && window.location.hash !== '#cover') return;
+    window.scrollTo({ top: 0, behavior: 'auto' });
+    onScroll();
+  });
 })();
 
 /* ---------- 14. LIVE STREAMING ---------- */

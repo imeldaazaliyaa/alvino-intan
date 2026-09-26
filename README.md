@@ -1,161 +1,66 @@
-# UNDANGAN DIGITAL - ALVINO & INTAN
-## Panduan Aset & Setup
+# UNDANGAN DIGITAL — ALVINO & INTAN
+
+Undangan pernikahan statis (HTML/CSS/JS murni, tanpa build tool).
+Desain mengikuti mockup di folder `../refrence/*.png`.
+
+**Stack:** HTML + CSS + JavaScript vanilla · Google Fonts (Nunito Sans) + 2 font lokal · Gambar PNG/JPG/WebP · Musik MP3.
 
 ---
 
-## 📁 STRUKTUR FOLDER LENGKAP
+## 📁 STRUKTUR FOLDER
 
 ```
-undangan-alvino-intan/
-├── index.html
-├── style.css
-├── script.js
+alvino-intan/
+├── index.html          # semua section (11 halaman gulir)
+├── style.css           # desain lengkap + responsif (mobile/tablet/desktop)
+├── script.js           # interaksi + animasi
 ├── README.md
+├── .git/
 └── assets/
-    ├── bg/
-    │   ├── bg-pattern.jpg
-    │   ├── a3.png
-    │   └── divider-flourish.svg  (CC0 freepngimg, recolor maroon)
-    ├── cover/
-    │   ├── lampion-left.png
-    │   ├── lampion-right.png
-    │   └── flowers-cover-bottom.png
-    ├── flowers-fixed/
-    │   └── flowers-fixed-bottom.png
-    ├── ayat/
-    │   ├── flowers-top-ayat.png
-    │   └── photo-ayat-framed.png
-    ├── profil/
-    │   ├── orchid-top-left.png
-    │   ├── groom-framed.png
-    │   ├── bride-framed.png
-    │   └── orchid-bottom-right.png
-    ├── save-date/
-    │   ├── orchid-top-right.png
-    │   ├── frame-lace-oval.png
-    │   ├── sd-1.jpg
-    │   ├── sd-2.jpg
-    │   ├── sd-3.jpg
-    │   ├── sd-4.jpg
-    │   └── sd-5.jpg
-    ├── resepsi/
-    │   ├── flowers-top-resepsi.png
-    │   └── photo-resepsi.jpg
-    ├── rsvp/
-    │   └── photo-rsvp.jpg
-    ├── gallery/
-    │   ├── gallery-1.png
-    │   ├── gallery-2.png
-    │   ├── gallery-3.png
-    │   ├── gallery-4.png
-    │   ├── gallery-5.png
-    │   ├── gallery-6.png
-    │   ├── gallery-7.png
-    │   ├── gallery-8.png
-    │   └── gallery-9.png
-    ├── gift/
-    │   ├── bca-logo.png
-    │   └── gift-icon.png
-    ├── thankyou/
-    │   ├── photo-thankyou-framed.png
-    │   └── corner-gold.png  (CC0 Wikimedia Commons)
-    └── music/
-        └── song.mp3
+    ├── ayat/           flowers-top-ayat.png (garland maroon), photo-ayat-framed.webp, page4.webp*
+    ├── bg/             bg-pattern.jpg (damask — dipakai semua halaman), a3.png*, divider-flourish.svg*
+    ├── cover/          lampion-left.png, lampion-right.png, flowers-cover-bottom.png, powerclip.jpg*
+    ├── fonts/          8273Windsong.woff2 (script), 2489calabassas-Regular.woff2 (serif),
+    │                   9844Theater-Brillion.woff2*, 7190FLOWRISE.woff2*
+    ├── flowers-fixed/  flowers-fixed-bottom.png (bunga tetap di bawah viewport)
+    ├── gallery/        gallery-1..9.webp  (bingkai stamp)
+    ├── gift/           bca-logo.png, gift-icon.png, aa342.png*
+    ├── music/          song.mp3
+    ├── profil/         groom-framed.webp, bride-framed.webp, orchid-top-left.png, orchid-bottom-right.png,
+    │                   group-profil.webp*
+    ├── resepsi/        photo-resepsi.jpg, flowers-top-resepsi.png (duplikat garland), event-v2*.webp*
+    ├── rsvp/           photo-rsvp.jpg, a21.png*
+    ├── save-date/      bitmap.webp (lace oval), sd-1..5.jpg, a11.png*, frame-lace-oval.png*
+    └── thankyou/       photo-thankyou-framed.webp, corner-gold.png*
 ```
 
----
-
-## 📐 SPESIFIKASI UKURAN ASET (HD - Retina Ready)
-
-Semua ukuran dalam **pixel**. Format PNG = **transparan wajib**. JPG untuk foto realistis (lebih ringan).
-
-### 🎨 assets/bg/
-| File | Ukuran | Format | Keterangan |
-|---|---|---|---|
-| `bg-pattern.jpg` | **1080 × 1920** | JPG (quality 85%) | Background damask cream — dipakai di seluruh halaman. Kalau bisa **seamless tile 800×800** biar bisa repeat vertikal tanpa jahitan. |
-
-### 🎨 assets/cover/  (Page 1)
-| File | Ukuran | Format | Keterangan |
-|---|---|---|---|
-| `lampion-left.png` | **500 × 900** | PNG transparent | Lampion merah kiri + tali menggantung ke atas. Background transparan. |
-| `lampion-right.png` | **500 × 900** | PNG transparent | Lampion merah kanan + tali. |
-| `flowers-cover-bottom.png` | **1080 × 700** | PNG transparent | Bunga besar-kecil bawah cover (full width). Background transparan. |
-
-### 🌸 assets/flowers-fixed/  (Persistent di semua page setelah cover)
-| File | Ukuran | Format | Keterangan |
-|---|---|---|---|
-| `flowers-fixed-bottom.png` | **1080 × 500** | PNG transparent | Bunga fixed di bawah yang tetap stay saat scroll. Composite kiri (bunga merah kecil + tangkai kering) + kanan (peony merah besar + tangkai kering). **PENTING: bagian tengah harus transparan** biar konten di atasnya kelihatan. |
-
-### 📖 assets/ayat/  (Page 2)
-| File | Ukuran | Format | Keterangan |
-|---|---|---|---|
-| `flowers-top-ayat.png` | **1080 × 400** | PNG transparent | Ornamen garland bunga di atas foto (yang kelihatan di page 2). |
-| `photo-ayat-framed.png` | **900 × 1400** | PNG transparent | Foto couple sudah dalam bingkai persegi rounded corner. Kasih shadow atau leave transparan. |
-
-### 👰 assets/profil/  (Page 3 & 4)
-| File | Ukuran | Format | Keterangan |
-|---|---|---|---|
-| `orchid-top-left.png` | **600 × 600** | PNG transparent | Anggrek merah cluster kiri-atas page 3. |
-| `groom-framed.png` | **600 × 800** | PNG transparent | Foto Alvino sudah dalam lace oval frame putih. **Frame + foto jadi 1 file**. Sisa area transparan. |
-| `bride-framed.png` | **600 × 800** | PNG transparent | Foto Intan sudah dalam lace oval frame putih. |
-| `orchid-bottom-right.png` | **500 × 500** | PNG transparent | Anggrek kecil pojok kanan-bawah page 4. |
-
-### 💐 assets/save-date/  (Page 5)
-| File | Ukuran | Format | Keterangan |
-|---|---|---|---|
-| `orchid-top-right.png` | **500 × 500** | PNG transparent | Anggrek kanan-atas page 5. |
-| `frame-lace-oval.png` | **1000 × 1200** | PNG transparent | Lace oval frame BESAR — **bagian tengah oval WAJIB transparan** (nanti foto rotasi muncul di dalamnya). |
-| `sd-1.jpg` s/d `sd-5.jpg` | **800 × 1000** masing-masing | JPG (quality 85%) | 5 foto yang bergantian tiap 1 detik di dalam frame lace. Rasio potrait, subjek di tengah. |
-
-### 🎊 assets/resepsi/  (Page 6)
-| File | Ukuran | Format | Keterangan |
-|---|---|---|---|
-| `flowers-top-resepsi.png` | **1080 × 400** | PNG transparent | Garland bunga di atas kartu resepsi (yang kelihatan di page 6). |
-| `photo-resepsi.jpg` | **900 × 1400** | JPG (quality 85%) | Foto couple di bawah kartu resepsi. |
-
-### 💌 assets/rsvp/  (Page 7)
-| File | Ukuran | Format | Keterangan |
-|---|---|---|---|
-| `photo-rsvp.jpg` | **900 × 1400** | JPG (quality 85%) | Foto Intan (yang di page 7 preview kamu). |
-
-### 📸 assets/gallery/  (Page 9)
-| File | Ukuran | Format | Keterangan |
-|---|---|---|---|
-| `gallery-1.png` s/d `gallery-9.png` | **700 × 900** masing-masing | PNG transparent | 9 foto **sudah dengan bingkai stamp perforated** cream. Sisa area transparan. Kalau tanpa frame, kirim JPG 700×900 juga oke. |
-
-### 🎁 assets/gift/  (Page 10 & 11)
-| File | Ukuran | Format | Keterangan |
-|---|---|---|---|
-| `bca-logo.png` | **500 × 180** | PNG transparent | Logo BCA. |
-| `gift-icon.png` | **300 × 300** | PNG transparent | Icon gift box merah maroon. |
-
-### 🙏 assets/thankyou/  (Page 12)
-| File | Ukuran | Format | Keterangan |
-|---|---|---|---|
-| `photo-thankyou-framed.png` | **900 × 1200** | PNG transparent | Foto couple sudah dalam lace oval frame putih (mirip frame page 3). |
-
-### 🎵 assets/music/
-| File | Format | Keterangan |
-|---|---|---|
-| `song.mp3` | MP3 (128–192 kbps) | Backsound. **Saat ini terisi: "Drifting Piano" — HoliznaCC0, lisensi CC0 1.0 Universal (Public Domain) dari Free Music Archive (https://freemusicarchive.org/music/holiznacc0/background-music/drifting-piano/). Cocok untuk pernikahan: piano lembut instrumental, loop. Max size 3-5 MB biar loading cepat. |
+`*` = aset sisa dari versi sebelumnya, **tidak dipakai** (aman dihapus kalau mau; riwayatnya tetap ada di git).
 
 ---
 
-## 🎯 TIPS OPTIMASI FILE
+## ⚙️ KONFIGURASI (`script.js` → `const CONFIG`)
 
-1. **PNG transparent** → pakai tool seperti TinyPNG atau Squoosh.app untuk kompres tanpa kehilangan quality. Target size per PNG: **<500 KB**.
-2. **JPG foto** → Quality 82-88% sudah lebih dari cukup HD. Target: **<400 KB per foto**.
-3. **Total ukuran ideal semua aset**: <15 MB biar loading di HP cepat.
-4. Kalau file mentah kamu dari Canva/Photoshop terlalu besar, resize dulu ke ukuran spec di atas — **jangan upload asli 4000px**, mubazir bandwidth.
+| Kunci | Fungsi |
+|---|---|
+| `weddingDate` | Target countdown, default `2026-10-25T08:00:00+07:00` |
+| `googleScriptURL` | URL Web App Google Sheet. **Kosong = mode demo** (RSVP & ucapan disimpan di `localStorage`) |
+| `youtubeURL` | Link live streaming. Kosong → tombol menampilkan "LINK BELUM DIISI" |
+| `demoWishes` | Ucapan contoh yang tampil di daftar |
+
+### Link personalisasi nama tamu
+```
+https://undangan-kamu.netlify.app/?to=Bapak+Budi+Santoso
+```
+Masih kompatibel dengan `?name=` dan `?guest=`. Nama otomatis terisi di kartu cover dan form RSVP.
+Membuka langsung ke section: `?to=Nama#rsvp`.
 
 ---
 
-## 🔧 SETUP GOOGLE SHEET UNTUK RSVP
+## 🔌 SETUP GOOGLE SHEET UNTUK RSVP & UCAPAN
 
-1. Buka Google Sheet baru, kasih 5 kolom header di baris 1:
+1. Buat Google Sheet baru, header di baris 1:
    `timestamp | nama | kehadiran | jumlah | ucapan`
-
-2. Menu **Extensions → Apps Script**, paste script ini:
+2. **Extensions → Apps Script**, tempel:
 
 ```javascript
 const SHEET_ID = 'GANTI_DENGAN_ID_SHEET_KAMU';
@@ -180,9 +85,9 @@ function doGet(e) {
     const sheet = SpreadsheetApp.openById(SHEET_ID).getSheetByName(SHEET_NAME);
     const rows = sheet.getDataRange().getValues().slice(1);
     const wishes = rows
-      .filter(r => r[4])                       // yang ada ucapan
+      .filter(r => r[4])
       .map(r => ({ nama: r[1], ucapan: r[4] }))
-      .reverse();                              // terbaru dulu
+      .reverse();
     return ContentService.createTextOutput(JSON.stringify(wishes))
       .setMimeType(ContentService.MimeType.JSON);
   }
@@ -190,51 +95,88 @@ function doGet(e) {
 }
 ```
 
-3. Ganti `SHEET_ID` → ambil dari URL Sheet (`docs.google.com/spreadsheets/d/[SHEET_ID]/edit`)
-4. **Deploy → New deployment → Web app**
-   - Execute as: **Me**
-   - Who has access: **Anyone**
-   - Klik Deploy, copy URL Web App
-5. Buka `script.js`, ubah:
-   ```js
-   googleScriptURL: 'PASTE_URL_WEB_APP_DI_SINI',
-   ```
-
-Sudah! RSVP masuk otomatis ke Sheet, ucapan tampil realtime.
+3. **Deploy → New deployment → Web app** (Execute as: *Me*, Access: *Anyone*), salin URL.
+4. Tempel URL itu ke `CONFIG.googleScriptURL` di `script.js`.
 
 ---
 
 ## 🚀 CARA DEPLOY
 
-- **Netlify Drop** (paling gampang, gratis): drag & drop folder `undangan-alvino-intan/` ke [app.netlify.com/drop](https://app.netlify.com/drop). Selesai dalam 30 detik, dapat URL.
-- **Vercel**: import folder ke vercel.com
-- **Hosting sendiri**: upload semua ke public_html via FTP.
-
-Undangan siap dibagikan dengan link seperti:
-```
-https://undangan-alvino-intan.netlify.app/?name=Bapak+Budi+Santoso
-```
-> Catatan: parameter utama adalah `?name=Nama Tamu` (meniru template Alisha). `?to=` tetap didukung untuk kompatibilitas link lama.
+- **Netlify Drop**: drag & drop folder ke [app.netlify.com/drop](https://app.netlify.com/drop).
+- **Vercel / hosting sendiri**: upload seluruh isi folder.
+- Kecualikan `.git/` bila memakai FTP (tidak ikut terpakai oleh browser).
 
 ---
 
-## 🎨 CATATAN ANIMASI YANG SUDAH JADI
+## 🎨 DESIGN SYSTEM
 
-| Element | Animasi |
+| Token | Nilai |
 |---|---|
-| Nama **Alvino & Intan** (cover) | Shimmer cahaya jalan kiri-kanan (3.5s loop) |
-| Lampion kiri & kanan | Turun perlahan dari atas satu per satu (0.4s & 1.1s delay) |
-| Bunga bawah cover | Fade in setelah lampion |
-| Bunga bawah page 2–12 | **Fixed / stay** saat scroll |
-| Semua elemen page | Fade-up saat masuk viewport |
-| Ornamen atas per page | Fade-down |
-| **Groom photo** (page 3) | Slide dari **kiri ke kanan** |
-| **Bride photo** (page 3) | Slide dari **kanan ke kiri** |
-| Save the Date foto | Ganti tiap **1 detik** (5 foto loop) |
-| Countdown | Real-time ke 25 Okt 2026 11:30 WIB |
-| **Thankyou!** & **ALVINO & INTAN** | Shimmer efek (sama seperti cover) |
-| Background music | Auto-play saat OPEN INVITATION diklik |
+| Latar | damask cream `#f1e8da` (`assets/bg/bg-pattern.jpg`) |
+| Panel | `rgba(255,252,246,.74)` + radius 34px |
+| Maroon (teks & tombol) | `#8f2b2b` / `#7a2222` |
+| Kartu gift | `#f4ecd0` |
+| Tombol cover | `#1a0708` |
+| Font script | **Windsong** (`--f-script`) — nama cover, semua judul seksi |
+| Font serif | **Calabassas** (`--f-serif`) — "THE WEDDING OF", nama mempelai, RSVP, countdown |
+| Font body | **Nunito Sans** (Google Fonts) — paragraf, form, tombol |
 
 ---
 
-Kalau ada aset yang kamu mau ukurannya beda / posisi geser, tinggal bilang.
+## ✨ ANIMASI & EFEK
+
+| Elemen | Efek |
+|---|---|
+| Lampion kiri & kanan | Turun dari atas saat halaman dibuka (delay 0.35s / 0.85s) |
+| Bunga bawah cover | Fade in setelah lampion |
+| Nama **Alvino & Intan** | Shimmer cahaya berjalan (gradient text, loop 5s) |
+| Kartu tamu | Fade-up (delay 1.55s) |
+| **OPEN INVITATION** | Confetti + kelopak jatuh, cover menutup, bunga/nav/tombol musik muncul, musik mulai |
+| Semua elemen isi | Fade-up saat masuk viewport, **stagger** 90ms antar saudara |
+| Countdown detik | Pop/beat tiap detik berubah |
+| Foto save-the-date | Crossfade tiap 2.6 detik |
+| Foto gallery | Naik + shadow saat hover |
+| Kartu gift | Naik saat hover; tombol salin → "TERSALIN ✓" hijau |
+| Bunga bawah (fixed) | Parallax halus mengikuti posisi scroll |
+| Bottom nav | Muncul dari bawah, ikon **aktif** mengikuti section yang sedang dilihat |
+| Lightbox | Klik foto → navigasi (panah kiri/kanan, Esc, usap kiri/kanan) |
+| Tombol | Hover naik, active mengecil |
+| `prefers-reduced-motion` | Semua animasi dimatikan |
+
+---
+
+## 📱 SECTION (urut guliran)
+
+1. **Cover** — lampion, nama script, kartu tamu
+2. **Ayat Suci** — foto + garland maroon, QS. Ar-Rum 21
+3. **Mempelai** — bismillah, 2 foto lace oval berdampingan, nama & orang tua
+4. **Save the Date** — lace oval + hitung mundur 4 kartu
+5. **Akad Nikah & Resepsi** — 2 kartu berkarland + foto
+6. **Live Streaming**
+7. **RSVP** — foto, deskripsi, form (nama, kehadiran, jumlah, ucapan)
+8. **Gallery** — 9 foto bingkai stamp, grid 3 kolom bertingkat + lightbox
+9. **Kisah Cinta** — timeline 3 tahap
+10. **Ucapan & Doa** — form + daftar ucapan
+11. **Gift** — 2 rekening BCA + alamat kirim + catatan
+12. **Thankyou** — foto lace oval + penutup
+
+---
+
+## 🖼 REGENERASI ASET
+
+Ukurannya sudah dioptimalkan untuk tampilan 390px @3x (total folder ~19 MB, tidak termasuk `.git`).
+
+| Aset | Ukuran sekarang | Format |
+|---|---|---|
+| `bg/bg-pattern.jpg` | 1500 × 2667 | JPG q84 |
+| `gallery/gallery-*.webp` | 760 × 977 | WebP q85 + alpha |
+| `profil/groom-framed.webp`, `bride-framed.webp` | 900 × 1080 | WebP q88 + alpha |
+| `ayat/photo-ayat-framed.webp` | 1150 × 1789 | WebP q88 |
+| `thankyou/photo-thankyou-framed.webp` | 940 × 1253 | WebP q88 + alpha |
+| `save-date/sd-*.jpg` | 1000 × 1250 | JPG q84 |
+| `cover/lampion-*.png` | 760 × 1368 | PNG |
+| `flowers-fixed/flowers-fixed-bottom.png` | 1500 × 694 | PNG |
+
+Rasio tampilan lain mengikuti CSS (`aspect-ratio` / `width: %`), jadi aman diganti selama rasio tetap.
+
+> Bila menambah foto baru, cukup letakkan dengan nama yang sama di `assets/` lalu sesuaikan referensi di `index.html`.

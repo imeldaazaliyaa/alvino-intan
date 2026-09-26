@@ -1,25 +1,28 @@
 /* ============================================================
-   ALVINO & INTAN — persis template GoodChoice "ALISHA"
-   Token Alisha: #AC3B3B / #963232 / #A04949 / #7C2525
-   Card: #FFF4EC / Button DM Sans 15px / Radius 30px
-   Font: windsong=Great Vibes, calabassas=Cormorant, body=Roboto
+   ALVINO & INTAN — undangan digital
+   Disesuaikan dengan mockup di ../refrence/*.png
+   Palet  : damask cream #f1e8da / maroon #8f2b2b / tan #f4ecd0
+   Font   : windsong (script) + calabassas (serif) + Nunito Sans (body)
    ============================================================ */
 
 :root{
-  --primary:       #AC3B3B;
-  --script-dark:   #963232;
-  --body-text:     #A04949;
-  --maroon-dark:   #7C2525;
-  --card:          #FFF4ECD1;
-  --card-solid:    #FFF4EC;
-  --white:         #FFFFFF;
-  --text-dark:     #3a1c1c;
-  --text-grey:     #505050;
+  --maroon:        #8f2b2b;
+  --maroon-deep:   #7a2222;
+  --maroon-soft:   #a34a45;
+  --script:        #8a2626;
+  --ink:           #1b1210;
+  --ink-soft:      #3a2a25;
+  --cream:         #f1e8da;
+  --panel:         rgba(255,252,246,.74);
+  --panel-solid:   #fdfaf3;
+  --tan:           #f4ecd0;
+  --btn-dark:      #1a0708;
+  --shadow-soft:   0 18px 44px rgba(96,46,34,.09);
+  --shadow-card:   0 14px 34px rgba(96,46,34,.12);
 
-  --font-windsong:   'windsong', 'Great Vibes', cursive;
-  --font-calabassas: 'calabassas-regular', 'Cormorant Garamond', serif;
-  --font-body:       'Roboto', 'Poppins', system-ui, sans-serif;
-  --font-btn:        'DM Sans', 'Roboto', system-ui, sans-serif;
+  --f-script: 'windsong', 'Great Vibes', cursive;
+  --f-serif:  'calabassas-regular', 'Cormorant Garamond', Georgia, serif;
+  --f-body:   'Nunito Sans', 'DM Sans', 'Roboto', system-ui, -apple-system, sans-serif;
 }
 
 @font-face{
@@ -45,23 +48,33 @@
 
 *,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
 
-html,body{
-  width:100%;
-  overflow-x:hidden;
+html{
   scroll-behavior:smooth;
-  -webkit-font-smoothing:antialiased;
+  -webkit-text-size-adjust:100%;
 }
 
 body{
-  font-family:var(--font-body);
-  font-weight:300;
-  color:var(--body-text);
-  background-color:#fdf6ee;
-  line-height:1.5;
+  width:100%;
   min-height:100vh;
+  overflow-x:hidden;
+  font-family:var(--f-body);
+  font-weight:400;
+  color:var(--ink-soft);
+  line-height:1.6;
+  background-color:var(--cream);
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Damask menempel di viewport -> seragam di semua section */
+body::before{
+  content:'';
+  position:fixed; inset:0; z-index:-2;
+  background:url('assets/bg/bg-pattern.jpg') center top / cover no-repeat;
+  background-color:var(--cream);
 }
 
 img{ max-width:100%; height:auto; display:block; }
+a{ color:inherit; }
 
 .page,
 .cover-inner{
@@ -71,772 +84,903 @@ img{ max-width:100%; height:auto; display:block; }
   position:relative;
 }
 
-.page{
-  position:relative;
-  background-color:#fdf6ee;
-}
+.page{ position:relative; }
 
 .page-inner{
-  padding:50px 28px 60px;
+  padding:56px 24px 168px;
   position:relative;
   z-index:2;
 }
 
 .center{ text-align:center; }
 
-/* ============ MUSIC TOGGLE (Alisha 40px) ============ */
+/* ============ PANEL KREM (bahasa visual mockup) ============ */
+.panel{
+  background:var(--panel);
+  border-radius:34px;
+  box-shadow:var(--shadow-soft);
+  position:relative;
+  z-index:1;
+  -webkit-backdrop-filter:blur(3px);
+  backdrop-filter:blur(3px);
+}
+
+/* ============ JUDUL SEKSI ============ */
+.section-script{
+  font-family:var(--f-script);
+  font-size:58px;
+  font-weight:400;
+  line-height:1.06;
+  color:var(--script);
+  text-align:center;
+  margin-bottom:14px;
+}
+.section-serif{
+  font-family:var(--f-serif);
+  font-size:54px;
+  font-weight:400;
+  letter-spacing:.05em;
+  line-height:1.1;
+  color:var(--maroon);
+  text-align:center;
+  margin:26px 0 14px;
+}
+.section-desc{
+  font-family:var(--f-body);
+  font-size:15px;
+  font-weight:400;
+  line-height:1.75;
+  color:var(--maroon);
+  text-align:center;
+  margin-bottom:24px;
+}
+
+/* ============ TOMBOL ============ */
+.btn-primary{
+  display:inline-block;
+  padding:12px 34px;
+  border-radius:999px;
+  background:var(--maroon);
+  color:#fff;
+  border:none;
+  font-family:var(--f-body);
+  font-size:14px;
+  font-weight:600;
+  letter-spacing:.1em;
+  text-decoration:none;
+  text-align:center;
+  cursor:pointer;
+  transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+  box-shadow:0 8px 20px rgba(122,34,34,.24);
+}
+.btn-primary:hover{ background:var(--maroon-deep); transform:translateY(-2px); box-shadow:0 12px 26px rgba(122,34,34,.3); }
+.btn-primary:active{ transform:translateY(0) scale(.97); }
+.btn-full{ width:100%; margin-top:6px; }
+
+/* ============ MUSIC TOGGLE ============ */
 .music-toggle{
   position:fixed;
-  bottom:82px;
-  right:max(16px, calc(50% - 224px));
+  bottom:84px;
+  right:max(16px, calc(50% - 232px));
   z-index:1001;
-  width:40px; height:40px;
+  width:42px; height:42px;
   border-radius:50%;
   border:none;
-  background:var(--maroon-dark);
+  background:var(--maroon);
   color:#fff;
   display:none;
   align-items:center; justify-content:center;
-  box-shadow:0 4px 16px rgba(0,0,0,.25);
+  box-shadow:0 6px 18px rgba(0,0,0,.28);
   cursor:pointer;
+  transition:transform .2s ease;
 }
+.music-toggle:hover{ transform:scale(1.08); }
 .music-toggle.show{ display:flex; }
 .music-toggle .icon-pause{ display:none; }
 .music-toggle.playing .icon-note{ display:none; }
 .music-toggle.playing .icon-pause{ display:block; }
 
-/* ============ COVER — foto full + gradient persis Alisha ============ */
+/* ============ COVER ============ */
 .cover{
   position:fixed;
   inset:0;
   z-index:999;
   display:flex; align-items:flex-end; justify-content:center;
-  background:#fdf6ee;
-  transition:opacity .8s ease, transform .8s ease, visibility .8s;
   overflow:hidden;
+  transition:opacity .9s ease, transform .9s ease, visibility .9s;
 }
 .cover.closed{
   opacity:0; visibility:hidden;
-  transform:translateY(-30px);
+  transform:translateY(-24px);
   pointer-events:none;
 }
 .cover-bg{
   position:absolute; inset:0;
-  background-image:url('assets/cover/powerclip.jpg');
-  background-position:center center;
-  background-size:cover;
-  background-repeat:no-repeat;
+  background:url('assets/bg/bg-pattern.jpg') center top / cover no-repeat;
+  background-color:var(--cream);
 }
-.cover-shade{
-  position:absolute; inset:0;
-  background:transparent;
+
+.lantern{
+  position:absolute; top:0; z-index:2;
+  pointer-events:none;
+  opacity:0;
+  animation:lanternDrop 1.25s cubic-bezier(.22,1,.36,1) forwards;
 }
+.lantern img{ width:100%; display:block; }
+.lantern-a{ right:31%; width:23%; animation-delay:.35s; }
+.lantern-b{ right:3%;  width:29%; animation-delay:.85s; }
+
+.cover-flowers{
+  position:absolute; left:0; bottom:0; width:100%;
+  z-index:2; pointer-events:none;
+  opacity:0;
+  animation:fadeIn 1.1s ease 1.35s forwards;
+}
+
 .cover-inner{
   height:100dvh;
   display:flex; flex-direction:column;
-  align-items:center; justify-content:flex-end;
-  padding:40px 28px 48px;
-  z-index:2;
+  align-items:center; justify-content:center;
+  padding:8vh 26px 5vh;
+  z-index:3;
+  gap:6vh;
 }
-.cover-text{ text-align:center; color:var(--primary); }
+.cover-text{ text-align:center; color:var(--ink); }
 .cover-wedding-of{
-  font-family:var(--font-windsong);
-  font-size:54px;
-  font-weight:500;
+  font-family:var(--f-serif);
+  font-size:17px;
+  font-weight:400;
+  letter-spacing:.42em;
+  text-indent:.42em;
   line-height:1;
-  color:var(--script-dark);
+  color:var(--ink);
+  margin-bottom:2vh;
 }
 .cover-name{
-  font-family:var(--font-calabassas);
-  font-size:71px;
+  font-family:var(--f-script);
   font-weight:400;
-  line-height:1.02;
-  color:var(--primary);
-  margin:2px 0 6px;
+  color:var(--ink);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  line-height:.98;
 }
-.cover-amp{ font-size:52px; }
-.cover-date{
-  font-family:var(--font-calabassas);
-  font-size:25px;
-  font-weight:400;
-  letter-spacing:.12em;
-  color:var(--primary);
+.cover-name .cn-line{
+  font-size:clamp(58px, 20vw, 88px);
+  display:block;
+}
+.cover-name .cn-amp{
+  font-size:clamp(42px, 14vw, 62px);
+  display:block;
+  margin:.12em 0;
+  opacity:.9;
+}
+
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .cover-name .cn-line,
+  .cover-name .cn-amp{
+    color:transparent;
+    background-image:linear-gradient(100deg,
+      #1b1210 34%, #6b4a30 44%, #e9cfa4 50%, #6b4a30 56%, #1b1210 66%);
+    background-size:250% 100%;
+    background-position:130% 0;
+    -webkit-background-clip:text;
+    background-clip:text;
+    animation:shimmer 5s linear 1.6s infinite;
+  }
 }
 
 .cover-guest{
-  margin-top:22px;
-  background:var(--card);
+  background:rgba(253,247,237,.76);
+  -webkit-backdrop-filter:blur(4px);
   backdrop-filter:blur(4px);
-  border-radius:30px;
-  padding:14px 22px 18px;
+  border-radius:32px;
+  padding:22px 22px 24px;
   text-align:center;
   width:100%;
-  max-width:340px;
+  max-width:330px;
+  box-shadow:0 18px 44px rgba(70,30,24,.12);
+  opacity:0;
+  animation:fadeUp .9s ease 1.55s forwards;
 }
 .guest-eyebrow{
-  font-family:var(--font-body);
-  font-size:15px; font-weight:300; line-height:1.5;
-  color:var(--primary);
+  font-size:14px;
+  font-weight:400;
+  line-height:1.6;
+  color:var(--ink);
 }
 .guest-name{
-  font-family:var(--font-body);
-  font-size:20px; font-weight:400; line-height:1.5;
-  margin:8px 0 12px;
-  color:var(--primary);
+  font-size:20px;
+  font-weight:700;
+  letter-spacing:.05em;
+  margin:14px 0 16px;
+  color:var(--ink);
   text-transform:uppercase;
 }
-.btn-open-link{ text-decoration:none; }
+.btn-open-link{ text-decoration:none; display:block; }
 .btn-open{
-  display:inline-block;
-  padding:7px 30px;
-  border-radius:30px;
-  background:var(--primary);
-  color:#fff;
-  font-family:var(--font-btn);
-  font-size:15px; font-weight:500;
-  letter-spacing:.04em;
+  display:block;
+  padding:13px 26px;
+  border-radius:999px;
+  background:var(--btn-dark);
+  color:#f6e9dc;
+  font-family:var(--f-body);
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.16em;
+  text-align:center;
   cursor:pointer;
-  box-shadow:0 6px 16px rgba(0,0,0,.18);
+  transition:transform .2s ease, background .2s ease;
+  box-shadow:0 8px 22px rgba(20,6,6,.3);
 }
+.btn-open:hover{ background:#2c1010; transform:translateY(-2px); }
+.btn-open:active{ transform:scale(.97); }
 
 /* ============ MAIN ============ */
 .main-hidden{ display:none; }
 .main-visible{ display:block; }
 
-.deco-top{ width:100%; position:relative; z-index:1; }
-
-/* AYAT — foto radius 30px persis Alisha */
-.ayat-photo{
-  width:79%;
-  margin:0 auto 26px;
-  border-radius:30px;
-  box-shadow:0 12px 40px rgba(124,37,37,.15);
+/* ============ 1. AYAT SUCI ============ */
+.ayat-frame{
+  position:relative;
+  margin-bottom:26px;
 }
-.ayat-box{ text-align:center; padding:0 4%; }
+.ayat-garland{
+  position:absolute;
+  top:-30px; left:50%;
+  transform:translateX(-50%);
+  width:116%;
+  z-index:3;
+  pointer-events:none;
+}
+.ayat-photo{
+  width:84%;
+  margin:0 auto;
+  border-radius:26px;
+  position:relative;
+  z-index:1;
+  box-shadow:0 20px 44px rgba(90,45,35,.16);
+}
+.ayat-box{ text-align:center; padding:30px 24px 28px; }
 .ayat-text{
-  font-family:var(--font-body);
-  font-size:16px; font-weight:300; line-height:1.6;
-  color:var(--body-text);
-  font-style:italic;
+  font-family:var(--f-body);
+  font-size:15.5px;
+  font-weight:400;
+  line-height:1.85;
+  color:var(--maroon);
 }
 .ayat-source{
-  font-family:var(--font-body);
-  font-size:14px; font-weight:300;
-  letter-spacing:2.4px;
-  color:var(--body-text);
-  margin-top:22px;
-  text-transform:uppercase;
+  font-family:var(--f-serif);
+  font-size:19px;
+  letter-spacing:.04em;
+  color:var(--maroon);
+  margin-top:18px;
 }
 
-/* PROFIL — texture repeat-y persis Alisha (Group-of-2-Objects-1) */
-.page-profil{
-  background-color:#fdf6ee;
-  background-image:url('assets/profil/group-profil.webp');
-  background-repeat:repeat-y;
-  background-position:center center;
-  background-size:100% auto;
+/* ============ 2. MEMPELAI ============ */
+.page-profil{ overflow:hidden; }
+.deco{
+  position:absolute;
+  z-index:1;
+  pointer-events:none;
+  opacity:.98;
 }
+.deco-tl{ top:10px; left:-6%; width:60%; }
+.deco-br{ bottom:120px; right:-8%; width:44%; }
+.deco-tr{ top:4px; right:-14%; width:58%; transform:scaleX(-1); }
 
-/* SAVE THE DATE — strip atas persis Alisha (ASSET-1-1 top center) */
-.page-save-date{
-  background-image:url('assets/save-date/a11.png');
-  background-repeat:no-repeat;
-  background-position:top center;
-  background-size:100% auto;
-}
-
-/* EVENT — ornamen atas + bawah persis Alisha (EVENT-V2-2 top, EVENT-V2 bottom) */
-.page-event{
-  background-image:url('assets/resepsi/event-v2-2.webp'), url('assets/resepsi/event-v2.webp');
-  background-repeat:no-repeat, no-repeat;
-  background-position:top center, bottom center;
-  background-size:100% auto, 100% auto;
-}
-
-/* RSVP — ornamen kiri atas persis Alisha (ASSET-2-1 top left) */
-.page-rsvp{
-  background-image:url('assets/rsvp/a21.png');
-  background-repeat:no-repeat;
-  background-position:top left;
-  background-size:100% auto;
-}
-
-/* LIVE — ornamen atas persis Alisha (ASSET-3 top center) */
-.page-live{
-  background-image:url('assets/bg/a3.png');
-  background-repeat:no-repeat;
-  background-position:top center;
-  background-size:100% auto;
-}
-
-/* GIFT — ornamen bawah persis Alisha (ASSET-A342 bottom center) */
-.page-gift{
-  background-image:url('assets/gift/aa342.png');
-  background-repeat:no-repeat;
-  background-position:bottom center;
-  background-size:100% auto;
-}
-.with-love{
-  text-align:center;
-  font-family:var(--font-body);
-  font-size:14px; font-weight:300;
-  letter-spacing:2.4px;
-  color:var(--body-text);
-  margin:10px 0 18px;
-  text-transform:uppercase;
-}
-.bismillah{ text-align:center; margin:0 auto 26px; max-width:82%; }
+.profil-panel{ padding:34px 20px 30px; }
+.bismillah{ text-align:center; margin-bottom:10px; }
 .bismillah-title{
-  font-family:var(--font-body);
-  font-size:16px; font-weight:400; line-height:1.5;
-  color:var(--body-text);
+  font-family:var(--f-body);
+  font-size:16px;
+  font-weight:600;
+  line-height:1.7;
+  color:var(--maroon);
 }
 .bismillah-body{
-  margin-top:10px;
-  font-family:var(--font-body);
-  font-size:16px; font-weight:300; line-height:1.5;
-  color:var(--body-text);
+  margin-top:14px;
+  font-family:var(--f-body);
+  font-size:15.5px;
+  font-weight:400;
+  line-height:1.8;
+  color:var(--maroon);
 }
 
-.mempelai{ text-align:center; margin:18px 0; }
-.mempelai-photo{
-  width:79%; max-width:300px;
-  margin:0 auto;
-  border-radius:30px;
-  box-shadow:0 12px 40px rgba(124,37,37,.15);
+.couple-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+  align-items:start;
+  margin:24px 0 6px;
 }
-.mempelai-role{
-  font-family:var(--font-windsong);
-  font-size:54px; font-weight:500;
-  color:var(--script-dark);
-  margin-top:10px; line-height:1;
+.couple-card{ text-align:center; }
+.couple-photo{ width:100%; }
+.couple-role{
+  font-family:var(--f-script);
+  font-size:42px;
+  line-height:1.1;
+  color:var(--script);
+  margin-top:-4px;
 }
+
+.couple-names{ text-align:center; margin-top:14px; }
 .mempelai-name{
-  font-family:var(--font-calabassas);
-  font-size:32px; font-weight:400;
-  color:var(--primary);
-  margin:6px 0; line-height:1.2;
+  font-family:var(--f-serif);
+  font-size:27px;
+  font-weight:400;
+  line-height:1.25;
+  color:var(--maroon);
+  margin:6px 0 4px;
 }
 .parents{
-  font-family:var(--font-body);
-  font-size:15px; font-weight:300;
-  color:var(--primary);
-}
-.ig-link{
-  display:inline-block; margin-top:8px;
-  font-family:var(--font-body); font-size:14px; font-weight:300;
-  color:var(--primary); text-decoration:none;
-  border-bottom:1px solid rgba(172,59,59,.35);
+  font-family:var(--f-body);
+  font-size:14.5px;
+  font-weight:400;
+  color:var(--maroon);
+  line-height:1.6;
 }
 .amp-big{
-  font-family:var(--font-calabassas);
-  font-size:71px; color:var(--primary);
-  margin:14px 0; text-align:center; line-height:1;
+  font-family:var(--f-serif);
+  font-size:52px;
+  color:var(--maroon);
+  line-height:1;
+  margin:16px 0 10px;
 }
 
-/* SAVE THE DATE */
-.sd-frame-wrap{
-  position:relative; width:100%;
-  aspect-ratio:9/11;
-  margin:6px auto 10px;
-  display:flex; align-items:center; justify-content:center;
+/* ============ 3. SAVE THE DATE ============ */
+.sd-oval{
+  position:relative;
+  width:100%;
+  aspect-ratio:900 / 1120;
+  margin:0 auto;
 }
-.sd-frame{ position:absolute; inset:0; width:100%; height:100%; z-index:3; pointer-events:none; }
-.sd-photos{ position:absolute; top:14%; left:20%; width:60%; height:62%; border-radius:50%; overflow:hidden; z-index:1; background:#fff; }
-.sd-photo{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity .5s ease; }
+.sd-frame{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  z-index:3;
+  pointer-events:none;
+}
+.sd-photos{
+  position:absolute;
+  left:23.5%; top:22%;
+  width:54%; height:58.5%;
+  border-radius:50%;
+  overflow:hidden;
+  z-index:1;
+  background:#2a1c19;
+}
+.sd-photo{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:cover;
+  opacity:0;
+  transition:opacity .9s ease;
+}
 .sd-photo.active{ opacity:1; }
-.sd-caption{
-  position:static;
-  display:flex; flex-direction:column; align-items:center;
+.sd-overlay{
+  position:absolute;
+  left:25%; top:23.5%;
+  width:51%; height:55%;
+  z-index:4;
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
   text-align:center;
-  padding:12px 0 0;
-  color:var(--primary);
+  color:#fff;
+  text-shadow:0 3px 16px rgba(0,0,0,.5);
+  pointer-events:none;
 }
-.sd-date{ font-family:var(--font-calabassas); font-size:38px; font-weight:400; line-height:1.05; color:var(--primary); }
+.sd-date{
+  font-family:var(--f-serif);
+  font-size:clamp(26px, 9vw, 40px);
+  font-weight:400;
+  line-height:1;
+  letter-spacing:.03em;
+}
 .sd-tag{
-  font-family:var(--font-windsong);
-  font-size:44px; font-weight:400;
-  margin-top:6px; line-height:1;
-  color:var(--script-dark);
+  font-family:var(--f-script);
+  font-size:clamp(26px, 9vw, 40px);
+  line-height:1.2;
+  margin-top:10px;
 }
 
-.countdown-head{
-  text-align:center;
-  font-family:var(--font-body);
-  font-size:16px; font-weight:300;
-  color:var(--body-text);
-  margin:14px 0 10px; line-height:1.5;
-}
-.countdown-head strong{ font-weight:400; }
 .countdown{
-  display:grid; grid-template-columns:repeat(4, 1fr); gap:8px;
-  margin-top:6px; text-align:center;
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:9px;
+  margin-top:36px;
+  text-align:center;
 }
 .cd-item{
   background:#fff;
-  border-radius:14px;
-  padding:12px 4px 10px;
-  box-shadow:0 4px 14px rgba(124,37,37,.10);
+  border-radius:20px;
+  padding:18px 4px 14px;
+  box-shadow:0 12px 26px rgba(96,46,34,.12);
+  transition:transform .3s ease;
 }
+.cd-item:hover{ transform:translateY(-4px); }
 .cd-item span{
   display:block;
-  font-family:var(--font-calabassas);
-  font-size:38px; font-weight:400;
-  color:var(--primary); line-height:1;
+  font-family:var(--f-serif);
+  font-size:34px;
+  font-weight:400;
+  color:var(--maroon);
+  line-height:1;
 }
 .cd-item small{
-  display:block; margin-top:4px;
-  font-family:var(--font-body);
-  font-size:12px; font-weight:300;
-  color:var(--body-text);
+  display:block;
+  margin-top:9px;
+  font-family:var(--f-body);
+  font-size:12px;
+  font-weight:400;
+  color:var(--maroon);
 }
+.cd-item.tick span{ animation:tickPop .45s ease; }
 
-/* EVENT — 2 kartu persis Alisha */
+/* ============ 4. AKAD + RESEPSI ============ */
 .event-card{
-  background:var(--card);
-  border-radius:30px;
-  padding:30px 24px;
   text-align:center;
-  color:var(--primary);
-  box-shadow:0 12px 40px rgba(124,37,37,.12);
-  margin-bottom:20px;
+  padding:54px 24px 34px;
+  margin:52px 0 34px;
+  color:var(--maroon);
+}
+.event-garland{
+  position:absolute;
+  top:-38px; left:50%;
+  transform:translateX(-50%);
+  width:116%;
+  pointer-events:none;
 }
 .event-title{
-  font-family:var(--font-body);
-  font-size:15px; font-weight:500;
-  letter-spacing:2px;
-  color:var(--primary);
-  margin-bottom:10px;
+  font-family:var(--f-script);
+  font-size:56px;
+  font-weight:400;
+  line-height:1;
+  color:var(--script);
+  margin-bottom:22px;
 }
-.event-date,.event-time{
-  font-family:var(--font-body);
-  font-size:16px; font-weight:300;
-  color:var(--body-text);
-  margin:4px 0;
+.event-date,
+.event-time{
+  font-family:var(--f-serif);
+  font-size:20px;
+  line-height:1.5;
+  color:var(--maroon);
 }
 .event-venue{
-  font-family:var(--font-body);
-  font-size:16px; font-weight:400;
-  margin-top:12px; color:var(--primary);
+  font-family:var(--f-serif);
+  font-size:20px;
+  margin-top:16px;
+  color:var(--maroon);
 }
 .event-address{
-  font-family:var(--font-body);
-  font-size:15px; font-weight:300;
-  margin:6px 0 18px; color:var(--body-text); line-height:1.6;
-}
-.event-photo{
-  width:79%; margin:6px auto 0;
-  border-radius:30px;
-  box-shadow:0 12px 40px rgba(124,37,37,.15);
+  font-family:var(--f-serif);
+  font-size:17px;
+  line-height:1.6;
+  margin:6px 0 22px;
+  color:var(--maroon);
 }
 
-.btn-primary{
-  display:inline-block;
-  padding:7px 30px;
-  border-radius:30px;
-  background:var(--primary);
-  color:#fff; border:none;
-  font-family:var(--font-btn);
-  font-size:15px; font-weight:500;
-  letter-spacing:.04em;
-  text-decoration:none; cursor:pointer;
-  transition:transform .2s, background .2s;
+.photo-card{
+  background:#fff;
+  padding:14px;
+  border-radius:26px;
+  box-shadow:var(--shadow-card);
+  margin-top:10px;
 }
-.btn-primary:active{ transform:scale(.97); background:var(--maroon-dark); }
-.btn-full{ width:100%; margin-top:8px; padding:12px 30px; }
+.photo-card img{ width:100%; border-radius:16px; }
+.photo-card-in{ padding:12px; }
 
-/* RSVP */
-.rsvp-photo{
-  width:79%; margin:0 auto 22px;
-  border-radius:30px;
-  box-shadow:0 12px 40px rgba(124,37,37,.15);
-}
-.rsvp-title{
-  font-family:var(--font-calabassas);
-  font-size:48px; font-weight:400;
-  text-transform:uppercase; letter-spacing:1.4px;
-  text-align:center; color:var(--primary);
-  margin-bottom:12px;
-}
-.rsvp-desc{
-  text-align:center; color:var(--body-text);
-  font-family:var(--font-body);
-  font-size:16px; font-weight:300; line-height:1.5;
-  margin-bottom:24px;
-}
-.rsvp-form{
-  background:var(--card);
-  border-radius:30px;
-  padding:26px 22px;
-  box-shadow:0 12px 40px rgba(124,37,37,.12);
-}
-.rsvp-form label{ display:block; margin-bottom:18px; }
-.rsvp-form label span, .radio-label{
-  display:block; color:var(--primary);
-  font-family:var(--font-body);
-  font-size:15px; font-weight:400; margin-bottom:6px;
-}
-.rsvp-form input, .rsvp-form select, .rsvp-form textarea,
-.wish-form input, .wish-form textarea{
-  width:100%; padding:10px 12px;
-  border:1px solid rgba(172,59,59,.3); border-radius:8px;
-  font-family:var(--font-body); font-size:15px; font-weight:300;
-  background:#fff; color:var(--text-dark); outline:none;
-}
-.rsvp-form input:focus, .rsvp-form select:focus, .rsvp-form textarea:focus,
-.wish-form input:focus, .wish-form textarea:focus{ border-color:var(--primary); }
-.radio-group{ margin-bottom:18px; }
-.radio{
-  display:flex !important; align-items:center; gap:8px;
-  font-family:var(--font-body) !important;
-  font-size:15px !important; font-weight:300 !important;
-  color:var(--text-dark) !important; margin-bottom:8px !important;
-}
-.radio input{ width:auto !important; accent-color:var(--primary); }
-.rsvp-status{ text-align:center; font-size:13px; margin-top:14px; min-height:16px; }
-.rsvp-status.ok  { color:#17A409; }
-.rsvp-status.err { color:#c62828; }
+/* ============ 5. LIVE STREAMING ============ */
+.live-panel{ padding:38px 24px 34px; }
 
-/* LIVE */
-.live-title{
-  font-family:var(--font-calabassas);
-  font-size:48px; font-weight:400;
-  text-transform:uppercase; letter-spacing:1.4px;
-  text-align:center; color:var(--primary);
-  line-height:1.1; margin-bottom:18px;
-}
-.live-title .live-script{
-  font-family:var(--font-windsong);
-  font-size:54px; font-weight:500;
-  text-transform:none; letter-spacing:0;
+/* ============ 6. RSVP ============ */
+.rsvp-panel{ padding:16px 20px 30px; }
+
+.form-underline label{ display:block; margin-bottom:22px; }
+.form-underline label span{
   display:block;
+  font-family:var(--f-body);
+  font-size:15px;
+  font-weight:600;
+  color:var(--maroon);
+  margin-bottom:4px;
 }
-.live-desc{
-  text-align:center; color:var(--body-text);
-  font-family:var(--font-body); font-size:15px; font-weight:300;
-  margin-bottom:16px; line-height:1.6;
+.form-underline input,
+.form-underline select,
+.form-underline textarea{
+  width:100%;
+  padding:9px 2px;
+  border:none;
+  border-bottom:1.5px solid rgba(143,43,43,.35);
+  border-radius:0;
+  background:transparent;
+  font-family:var(--f-body);
+  font-size:15px;
+  color:var(--ink);
+  outline:none;
+  transition:border-color .25s ease;
+  -webkit-appearance:none;
+  appearance:none;
 }
+.form-underline select{
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' fill='none' stroke='%238f2b2b' stroke-width='1.6' stroke-linecap='round'/></svg>");
+  background-repeat:no-repeat;
+  background-position:right 4px center;
+}
+.form-underline textarea{ resize:vertical; line-height:1.6; }
+.form-underline input:focus,
+.form-underline select:focus,
+.form-underline textarea:focus{ border-bottom-color:var(--maroon); }
+.form-underline input::placeholder,
+.form-underline textarea::placeholder{ color:rgba(58,42,37,.42); }
 
-/* GALLERY */
-.gallery-title{
-  font-family:var(--font-calabassas);
-  font-size:74px; font-weight:400;
-  color:var(--primary); text-align:center;
-  margin-bottom:18px; line-height:1;
+.rsvp-status{ text-align:center; font-size:13.5px; margin-top:14px; min-height:18px; }
+.rsvp-status.ok{ color:#1d7a2e; }
+.rsvp-status.err{ color:#c62828; }
+
+/* ============ 7. GALLERY ============ */
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:14px;
+  align-items:start;
 }
-.gallery-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:6px; }
 .gallery-grid img{
-  width:100%; aspect-ratio:3/4; object-fit:cover; object-position:center 20%;
-  border-radius:6px; cursor:zoom-in;
-  background:#fff; transition:transform .3s, filter .3s;
+  width:100%;
+  height:auto;
+  cursor:zoom-in;
+  transition:transform .4s ease, filter .4s ease;
+  filter:drop-shadow(0 10px 20px rgba(96,46,34,.16));
 }
-.gallery-grid img:hover{ transform:scale(1.03); filter:brightness(.75); }
-/* Pola campuran persis Alisha: selingan foto landscape full-width */
-.gallery-grid img:nth-child(6),
-.gallery-grid img:nth-child(11){
-  grid-column:1 / -1;
-  aspect-ratio:16/10;
-}
-.lightbox{ position:fixed; inset:0; z-index:2000; background:rgba(0,0,0,.9); display:none; align-items:center; justify-content:center; padding:20px; }
-.lightbox.open{ display:flex; }
-.lightbox img{ max-width:100%; max-height:90vh; border-radius:8px; }
-.lightbox-close{ position:absolute; top:14px; right:20px; color:#fff; font-size:38px; cursor:pointer; }
+.gallery-grid img:hover{ transform:translateY(-6px) scale(1.03); filter:drop-shadow(0 16px 28px rgba(96,46,34,.26)); }
+.gallery-grid img:nth-child(3n+2){ margin-top:28px; }
 
-/* STORY */
-.story-title{
-  font-family:var(--font-calabassas);
-  font-size:56px; font-weight:400;
-  color:var(--primary); text-align:center;
-  margin-bottom:16px;
+.lightbox{
+  position:fixed; inset:0; z-index:2000;
+  background:rgba(12,6,6,.93);
+  display:none;
+  align-items:center; justify-content:center;
+  padding:20px;
 }
-.story-thumbs{ display:flex; gap:8px; overflow-x:auto; padding-bottom:10px; margin-bottom:20px; justify-content:flex-start; }
+.lightbox.open{ display:flex; animation:fadeIn .25s ease; }
+.lightbox img{ max-width:100%; max-height:88vh; border-radius:10px; }
+.lightbox-close{
+  position:absolute; top:16px; right:22px;
+  color:#f1e8da; font-size:40px; line-height:1; cursor:pointer;
+}
+
+/* ============ 8. KISAH CINTA ============ */
+.story-thumbs{
+  display:flex; gap:10px;
+  overflow-x:auto;
+  padding-bottom:12px;
+  margin-bottom:28px;
+  justify-content:flex-start;
+  scrollbar-width:none;
+}
+.story-thumbs::-webkit-scrollbar{ display:none; }
 .story-thumbs img{
-  width:72px; height:72px; object-fit:cover;
-  border-radius:50%; flex-shrink:0;
+  width:74px; height:74px;
+  object-fit:cover;
+  border-radius:50%;
+  flex-shrink:0;
   border:3px solid #fff;
-  box-shadow:0 12px 40px rgba(124,37,37,.15);
+  box-shadow:0 8px 20px rgba(96,46,34,.2);
+  transition:transform .3s ease;
+}
+.story-thumbs img:hover{ transform:translateY(-4px); }
+
+.story-timeline{ list-style:none; position:relative; }
+.story-timeline::before{
+  content:'';
+  position:absolute;
+  left:7px; top:14px; bottom:40px;
+  width:2px;
+  background:linear-gradient(180deg, rgba(143,43,43,.45), rgba(143,43,43,.12));
 }
 .story-item{
-  background:var(--card);
-  border-radius:30px; padding:22px 20px;
-  margin-bottom:14px;
-  box-shadow:0 12px 40px rgba(124,37,37,.12);
+  position:relative;
+  list-style:none;
+  margin:0 0 16px 30px;
+  padding:20px 20px 20px 22px;
+}
+.story-dot{
+  position:absolute;
+  left:-30px; top:24px;
+  width:14px; height:14px;
+  border-radius:50%;
+  background:var(--maroon);
+  box-shadow:0 0 0 5px rgba(143,43,43,.14);
 }
 .story-item h3{
-  font-family:var(--font-body);
-  font-size:16px; font-weight:400;
-  color:var(--primary); margin-bottom:8px;
+  font-family:var(--f-serif);
+  font-size:23px;
+  font-weight:400;
+  color:var(--maroon);
+  margin-bottom:8px;
+  line-height:1.2;
 }
 .story-item p{
-  font-size:14px; font-weight:300;
-  color:var(--body-text); line-height:1.6;
-  font-family:var(--font-body);
+  font-family:var(--f-body);
+  font-size:14.5px;
+  font-weight:400;
+  line-height:1.75;
+  color:var(--maroon);
 }
 
-/* GIFT */
-.gift-title{
-  font-family:var(--font-body);
-  font-size:15px; font-weight:500; letter-spacing:2px;
-  color:var(--primary); text-align:center;
-  margin-bottom:6px; line-height:1.4;
-  text-transform:uppercase;
-}
-.gift-title .gift-script{
-  display:block;
-  font-family:var(--font-windsong);
-  font-size:54px; font-weight:500;
-  text-transform:none; letter-spacing:0;
-  color:var(--script-dark);
-}
-.gift-desc{
-  text-align:center; color:var(--body-text);
-  font-family:var(--font-body);
-  font-size:15px; font-weight:300; line-height:1.6;
-  margin-bottom:18px;
-}
-.toggle-gift{ margin-bottom:18px; }
-.area-gift-card{ display:none; }
-.area-gift-card.is-open{ display:block; animation:fadeIn .5s ease; }
-.gift-card{
-  background:var(--card-solid);
-  border-radius:30px; padding:24px 20px;
-  text-align:center; margin-bottom:18px;
-  box-shadow:0 12px 40px rgba(124,37,37,.12);
-  opacity:0; transform:translateY(16px);
-  transition:opacity .5s, transform .5s;
-}
-.area-gift-card.is-open .gift-card{ opacity:1; transform:none; }
-.bank-label{
-  font-family:var(--font-body);
-  font-size:15px; font-weight:500; letter-spacing:2px;
-  color:var(--primary); margin-bottom:8px;
-}
-.bank-logo{ width:120px; margin:0 auto 14px; }
-.bank-number{
-  font-family:var(--font-calabassas);
-  font-size:28px; font-weight:400;
-  color:var(--primary); margin-bottom:2px;
-}
-.bank-name{
-  font-family:var(--font-body);
-  font-size:15px; font-weight:300;
-  color:var(--body-text); margin-bottom:16px; line-height:1.6;
-}
-.gift-icon{ width:56px; margin:0 auto 12px; }
-.attention{
-  background:rgba(255,255,255,.85);
-  border-radius:30px; padding:20px 18px;
-  font-size:13px; font-weight:300;
-  color:var(--body-text); line-height:1.7;
-  font-family:var(--font-body);
-}
-.attention p{ margin-bottom:6px; }
-
-/* WISHES */
-.wishes-head{
-  font-family:var(--font-body);
-  font-size:15px; font-weight:500; letter-spacing:2px;
-  color:var(--primary); text-align:center;
-  line-height:1.4; margin-bottom:8px;
-  text-transform:uppercase;
-}
-.wishes-head .wishes-script{
-  display:block;
-  font-family:var(--font-windsong);
-  font-size:54px; font-weight:500;
-  text-transform:none; letter-spacing:0;
-  color:var(--script-dark);
-}
-.wishes-sub{
-  text-align:center; color:var(--body-text);
-  font-family:var(--font-body);
-  font-size:15px; font-weight:300;
-  margin-bottom:22px;
-}
-.wish-form{
-  background:var(--card);
-  border-radius:30px; padding:24px 22px;
-  box-shadow:0 12px 40px rgba(124,37,37,.12);
-  margin-bottom:22px;
-}
-.wish-form label{ display:block; margin-bottom:14px; }
-.wish-form label span{
-  display:block; color:var(--primary);
-  font-family:var(--font-body);
-  font-size:15px; font-weight:400; margin-bottom:6px;
-}
-.wishes-wrap{ margin-top:10px; }
+/* ============ 9. UCAPAN & DOA ============ */
+.wishes-panel{ padding:34px 20px 26px; }
+.wishes-wrap{ margin-top:8px; }
 .wishes-list{
-  max-height:400px; overflow-y:auto;
-  padding:10px 8px; border-radius:30px;
-  background:rgba(255,255,255,.55);
+  max-height:420px;
+  overflow-y:auto;
+  padding:6px;
+  border-radius:24px;
+  background:rgba(255,255,255,.6);
 }
 .wishes-list::-webkit-scrollbar{ width:6px; }
-.wishes-list::-webkit-scrollbar-thumb{ background:#c45555; border-radius:8px; }
+.wishes-list::-webkit-scrollbar-thumb{ background:#c98b8b; border-radius:8px; }
 .wish-item{
-  display:flex; gap:10px; align-items:flex-start;
-  background:rgba(255,255,255,.92);
-  border-radius:16px; padding:12px 14px;
-  margin-bottom:10px;
-  box-shadow:0 2px 8px rgba(0,0,0,.05);
+  display:flex; gap:11px; align-items:flex-start;
+  background:rgba(255,255,255,.95);
+  border-radius:18px;
+  padding:13px 14px;
+  margin-bottom:8px;
+  box-shadow:0 3px 10px rgba(96,46,34,.07);
+  animation:fadeUp .45s ease both;
 }
 .wish-avatar{
   flex-shrink:0;
-  width:36px; height:36px; border-radius:50%;
-  background:var(--primary); color:#fff;
+  width:36px; height:36px;
+  border-radius:50%;
+  background:var(--maroon);
+  color:#fff;
   display:flex; align-items:center; justify-content:center;
-  font-family:var(--font-body); font-size:15px; font-weight:500;
+  font-size:15px; font-weight:600;
 }
 .wish-body{ flex:1; min-width:0; }
-.wish-name{
-  color:var(--primary); font-weight:500;
-  font-size:13px; margin-bottom:4px;
-  font-family:var(--font-body);
-}
-.wish-text{ color:var(--text-grey); font-size:13px; line-height:1.5; font-weight:300; }
+.wish-name{ color:var(--maroon); font-weight:700; font-size:13.5px; margin-bottom:3px; }
+.wish-text{ color:var(--ink-soft); font-size:13.5px; line-height:1.6; }
 
-/* CC0 flourish divider */
-.section-divider{
-  display:block;
-  width:52%; max-width:220px; height:auto;
-  margin:2px auto 16px;
+/* ============ 10. GIFT ============ */
+.page-gift{ overflow:hidden; }
+.gift-panel{ padding:44px 20px 30px; }
+.area-gift-card{ margin-top:6px; }
+.gift-card{
+  background:var(--tan);
+  border-radius:30px;
+  padding:30px 22px 26px;
+  text-align:center;
+  margin-bottom:18px;
+  box-shadow:0 14px 32px rgba(96,46,34,.12);
+  transition:transform .3s ease;
 }
+.gift-card:hover{ transform:translateY(-4px); }
+.bank-logo{ width:154px; margin:0 auto 18px; }
+.bank-number{
+  font-family:var(--f-serif);
+  font-size:31px;
+  letter-spacing:.03em;
+  color:#241a15;
+  line-height:1.1;
+  margin-bottom:4px;
+}
+.bank-name{
+  font-family:var(--f-body);
+  font-size:15.5px;
+  color:#3a2a22;
+  margin-bottom:20px;
+}
+.gift-icon{ width:76px; margin:0 auto 16px; }
+.gift-block{
+  font-family:var(--f-body);
+  font-size:15.5px;
+  line-height:1.75;
+  color:#3a2a22;
+  margin-bottom:18px;
+}
+.gift-block strong{ font-weight:700; color:#241a15; }
+.btn-copy{ font-size:13px; padding:12px 26px; }
 
-/* THANKYOU */
-.ty-photo{ width:79%; max-width:340px; margin:0 auto 20px; border-radius:30px; }
+.attention{
+  background:rgba(255,255,255,.7);
+  border-radius:26px;
+  padding:20px 20px;
+  font-size:13.5px;
+  line-height:1.75;
+  color:var(--ink-soft);
+}
+.attention p{ margin-bottom:6px; }
+.attention p:last-child{ margin-bottom:0; }
+.attention strong{ color:var(--maroon); letter-spacing:.06em; }
+
+/* ============ 11. THANKYOU ============ */
+.page-thankyou .page-inner{ padding-bottom:190px; }
+.ty-photo{
+  width:94%;
+  max-width:420px;
+  margin:0 auto -6px;
+  filter:drop-shadow(0 16px 34px rgba(96,46,34,.16));
+}
 .ty-title{
-  font-family:var(--font-windsong);
-  font-size:54px; font-weight:500;
-  text-align:center; color:var(--script-dark);
-  margin-bottom:12px;
+  font-family:var(--f-script);
+  font-size:66px;
+  font-weight:400;
+  line-height:1;
+  text-align:center;
+  color:var(--script);
+  margin-top:-14px;
+  margin-bottom:18px;
 }
 .ty-desc{
-  text-align:center; color:var(--body-text);
-  font-family:var(--font-body);
-  font-size:15px; font-weight:300; line-height:1.6;
-  margin-bottom:16px;
+  text-align:center;
+  font-size:15px;
+  line-height:1.8;
+  color:var(--maroon);
+  margin-bottom:34px;
 }
 .ty-seeyou{
-  text-align:center; color:var(--body-text);
-  font-family:var(--font-body);
-  font-size:15px; font-weight:300; margin-bottom:14px;
+  text-align:center;
+  font-size:16px;
+  color:var(--maroon);
+  margin-bottom:16px;
 }
 .ty-couple{
-  font-family:var(--font-windsong);
-  font-size:54px; font-weight:500;
-  text-align:center; color:var(--primary);
-  line-height:1.1;
-  margin-bottom:26px;
-}
-/* Footer maroon persis Alisha */
-.site-footer{
-  position:relative;
-  background:var(--maroon-dark);
-  padding:22px 20px 96px;
+  font-family:var(--f-serif);
+  font-size:34px;
+  font-weight:400;
+  letter-spacing:.06em;
   text-align:center;
+  color:var(--maroon);
+  line-height:1.2;
+  margin-bottom:24px;
 }
-/* CC0 gold corners di atas footer */
-.foot-corner{
-  position:absolute; top:-44px;
-  width:104px; height:auto;
-  pointer-events:none;
-}
-.foot-corner-left{ left:6px; }
-.foot-corner-right{ right:6px; transform:scaleX(-1); }
 .ty-credit{
-  text-align:center; font-size:12px; font-weight:300;
-  color:#fff; opacity:.92;
-  letter-spacing:.08em;
-  font-family:var(--font-body);
+  text-align:center;
+  font-size:12.5px;
+  letter-spacing:.06em;
+  color:rgba(58,42,37,.7);
 }
 
-/* Bottom nav — pill persis Alisha */
+/* ============ BUNGA TETAP DI BAWAH ============ */
+.fixed-flowers{
+  position:fixed;
+  left:0; right:0; bottom:0;
+  z-index:60;
+  display:flex;
+  justify-content:center;
+  pointer-events:none;
+  opacity:0;
+  transition:opacity .9s ease;
+}
+.fixed-flowers.show{ opacity:1; }
+.fixed-flowers img{
+  width:min(100vw, 760px);
+  display:block;
+  will-change:transform;
+}
+
+/* ============ BOTTOM NAV ============ */
 .bottom-nav{
-  position:fixed; bottom:14px; left:50%; transform:translateX(-50%);
-  width:calc(100% - 32px); max-width:420px; z-index:1000;
+  position:fixed;
+  bottom:14px; left:50%;
+  transform:translateX(-50%);
+  width:calc(100% - 32px);
+  max-width:400px;
+  z-index:1000;
   display:none;
-  justify-content:space-around; align-items:center;
-  background:var(--primary);
-  border-radius:999px; padding:10px 14px;
-  box-shadow:0 8px 30px rgba(0,0,0,.25);
+  justify-content:space-around;
+  align-items:center;
+  background:var(--maroon);
+  border-radius:999px;
+  padding:9px 12px;
+  box-shadow:0 10px 30px rgba(0,0,0,.3);
 }
-.bottom-nav.show{ display:flex; }
-.bottom-nav a{ color:#fff; opacity:.85; display:flex; padding:6px; }
+.bottom-nav.show{ display:flex; animation:navIn .6s cubic-bezier(.22,1,.36,1) both; }
+.bottom-nav a{
+  color:#fff;
+  opacity:.7;
+  display:flex;
+  padding:6px;
+  border-radius:50%;
+  transition:opacity .25s ease, transform .25s ease, background .25s ease;
+}
 .bottom-nav a svg{ width:22px; height:22px; }
-.bottom-nav a.active{ opacity:1; transform:scale(1.15); }
+.bottom-nav a:hover{ opacity:1; background:rgba(255,255,255,.14); }
+.bottom-nav a.active{ opacity:1; transform:translateY(-2px) scale(1.12); }
 
-/* Animasi scroll */
-[data-anim]{ opacity:0; transition:opacity .9s ease, transform .9s ease; will-change:opacity, transform; }
-[data-anim="fade-up"]      { transform:translateY(40px); }
-[data-anim="fade-down"]    { transform:translateY(-40px); }
-[data-anim].in-view{ opacity:1; transform:translate(0,0); }
-@keyframes fadeIn{ from { opacity:0; } to { opacity:1; } }
-
-@media (min-width:521px) and (max-width:1279px){
-  /* Tablet persis referensi: kolom 600px + texture powerclip full-bleed */
-  body{
-    background-color:#fdf6ee;
-    background-image:url('assets/cover/powerclip.jpg');
-    background-position:center center;
-    background-size:cover;
-    background-repeat:no-repeat;
-    background-attachment:fixed;
-  }
-  .page, .cover-inner{
-    max-width:600px;
-    box-shadow:0 0 60px rgba(0,0,0,.08);
-  }
-  .cover{ background:transparent; }
-  .cover-guest{ max-width:520px; }
-  .bottom-nav{ max-width:560px; }
-  .music-toggle{ right:max(16px, calc(50% - 264px)); }
+/* ============ LAYER EFEK (confetti / kelopak) ============ */
+.fx-layer{
+  position:fixed; inset:0;
+  z-index:1500;
+  pointer-events:none;
+  overflow:hidden;
+}
+.petal{
+  position:absolute;
+  top:-8vh;
+  border-radius:60% 20% 55% 25%;
+  opacity:0;
+  animation:petalFall linear forwards;
+  will-change:transform, opacity;
+}
+.confetti{
+  position:absolute;
+  top:-6vh;
+  width:8px; height:14px;
+  border-radius:2px;
+  opacity:0;
+  animation:confettiFall linear forwards;
+  will-change:transform, opacity;
 }
 
-/* Desktop split persis Alisha: foto 70% kiri + panel 30% kanan */
+/* ============ ANIMASI SCROLL ============ */
+[data-anim]{
+  opacity:0;
+  transition:opacity .95s cubic-bezier(.22,1,.36,1), transform .95s cubic-bezier(.22,1,.36,1);
+  will-change:opacity, transform;
+}
+[data-anim="fade-up"]  { transform:translateY(42px); }
+[data-anim="fade-down"]{ transform:translateY(-42px); }
+[data-anim="fade-left"]{ transform:translateX(-46px); }
+[data-anim="fade-right"]{ transform:translateX(46px); }
+[data-anim].in-view{ opacity:1; transform:translate(0,0); }
+
+@keyframes fadeIn{ from{ opacity:0; } to{ opacity:1; } }
+@keyframes fadeUp{ from{ opacity:0; transform:translateY(22px); } to{ opacity:1; transform:translateY(0); } }
+@keyframes navIn{ from{ opacity:0; transform:translate(-50%, 26px); } to{ opacity:1; transform:translate(-50%, 0); } }
+@keyframes lanternDrop{
+  from{ opacity:0; transform:translateY(-118%); }
+  to  { opacity:1; transform:translateY(0); }
+}
+@keyframes shimmer{
+  from{ background-position:130% 0; }
+  to  { background-position:-130% 0; }
+}
+@keyframes tickPop{
+  0%{ transform:scale(1); }
+  40%{ transform:scale(1.16); }
+  100%{ transform:scale(1); }
+}
+@keyframes petalFall{
+  0%  { opacity:0; transform:translate3d(0,-10vh,0) rotate(0deg); }
+  8%  { opacity:.95; }
+  100%{ opacity:.9; transform:translate3d(var(--drift, 40px), 112vh, 0) rotate(var(--spin, 540deg)); }
+}
+@keyframes confettiFall{
+  0%  { opacity:0; transform:translate3d(0,-8vh,0) rotate(0deg); }
+  10% { opacity:1; }
+  85% { opacity:1; }
+  100%{ opacity:0; transform:translate3d(var(--drift, 30px), 108vh, 0) rotate(var(--spin, 720deg)); }
+}
+
+/* ============ TABLET ============ */
+@media (min-width:521px) and (max-width:1279px){
+  .page, .cover-inner{ max-width:560px; }
+  .page, .cover-inner{ box-shadow:0 0 70px rgba(70,35,28,.1); }
+  .cover{ background:var(--cream); }
+  .cover-guest{ max-width:420px; }
+  .bottom-nav{ max-width:480px; }
+  .music-toggle{ right:max(16px, calc(50% - 272px)); }
+}
+
+/* ============ DESKTOP ============ */
 @media (min-width:1280px){
-  body{ background-color:#fdf6ee; }
-  body::before{
-    content:'';
-    position:fixed; top:0; bottom:0; left:0; width:70vw; z-index:0;
-    background:url('assets/save-date/sd-1.jpg') center center/cover no-repeat;
-  }
-  body::after{
-    content:'';
-    position:fixed; top:0; bottom:0; left:0; width:70vw; z-index:0;
-    background:linear-gradient(180deg, rgba(0,0,0,.30) 0%, rgba(0,0,0,0) 35%, rgba(0,0,0,0) 60%, rgba(0,0,0,.55) 100%);
-  }
   .page, .cover-inner{
-    position:relative; z-index:1;
-    max-width:380px;
-    margin-left:auto;
-    margin-right:calc((30vw - 380px) / 2);
+    max-width:540px;
+    box-shadow:0 0 90px rgba(70,35,28,.13);
   }
-  /* Cover lock: foto kiri + panel powerclip kanan */
-  .cover{ background:transparent; justify-content:flex-end; }
-  .cover-bg{ left:70vw; right:0; width:auto; }
-  .cover-inner{ margin-top:0; margin-bottom:0; margin-left:0; }
-  /* Profil: groom & bride sejajar persis referensi desktop */
-  .page-profil .page-inner{
-    display:flex; flex-wrap:wrap; align-items:flex-start;
-  }
-  .page-profil .with-love,
-  .page-profil .bismillah{ width:100%; }
-  .page-profil .mempelai{ width:42%; }
-  .page-profil .mempelai-photo{ width:100%; }
-  .page-profil .mempelai-name{ font-size:22px; }
-  .page-profil .amp-big{
-    width:16%; align-self:center;
-    font-size:44px; margin:0;
-  }
-  .bottom-nav{
-    left:auto; right:calc((30vw - 380px) / 2 + 16px);
-    transform:none; width:calc(30vw - 32px); max-width:348px;
-  }
-  .music-toggle{
-    right:calc((30vw - 380px) / 2 + 16px);
-  }
+  .bottom-nav{ max-width:460px; }
+  .music-toggle{ right:calc(50% - 540px); }
+  .fixed-flowers img{ width:min(72vw, 1100px); }
+  .cover-wedding-of{ font-size:19px; }
 }
 
 @media (prefers-reduced-motion: reduce){
-  *,*::before,*::after{ animation-duration:.001s !important; transition-duration:.001s !important; }
+  *,*::before,*::after{
+    animation-duration:.001s !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.001s !important;
+  }
+  html{ scroll-behavior:auto; }
 }

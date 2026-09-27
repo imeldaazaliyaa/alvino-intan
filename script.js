@@ -2,7 +2,7 @@
 
 const CONFIG = {
   weddingDate: '2026-10-25T11:30:00+07:00',
-  googleScriptURL: '',
+  googleScriptURL: 'https://script.google.com/macros/s/AKfycbz3mS8I6if3wBEyeuWLMUIETuw8-IW1WW6OFBBhj3HHlomzCqPsPj1KEsSL_kssCqRM/exec',
   demoWishes: [
     { nama: 'Rina Kusuma',   ucapan: 'Selamat menempuh hidup baru! Semoga sakinah mawaddah warahmah.' },
     { nama: 'Bagus Prasetyo', ucapan: 'Barakallahu lakuma. Semoga langgeng sampai jannah, aamiin.' },

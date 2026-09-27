@@ -61,14 +61,6 @@ img{ max-width:100%; height:auto; display:block; }
     rgba(0,0,0,.15) 45%,
     rgba(0,0,0,.35) 100%);
 }
-.desktop-bg-text{
-  position:absolute; left:6%; bottom:9%;
-  color:#fff; text-shadow:0 4px 18px rgba(0,0,0,.6);
-  max-width:42%;
-}
-.db-eyebrow{ font-family:var(--font-body); font-size:14px; letter-spacing:.4em; margin-bottom:16px; opacity:.95; }
-.db-couple{ font-family:var(--font-garamond); font-size:78px; font-weight:500; line-height:1; margin-bottom:18px; }
-.db-date{ font-family:var(--font-body); font-size:15px; letter-spacing:.35em; }
 
 @media (min-width:900px){
   .desktop-bg{ display:block; }
@@ -353,6 +345,18 @@ img{ max-width:100%; height:auto; display:block; }
   max-width:96%;
   position:relative;
   z-index:4;
+  transform-origin:50% 0%;
+}
+/* Animasi bunga garland ayat — goyang lembut terus-menerus setelah muncul */
+.garland-center.in-view{
+  animation:garlandSway 6s ease-in-out 2s infinite;
+}
+@keyframes garlandSway{
+  0%   { transform:rotate(0deg)    translateY(0)    scale(1); }
+  25%  { transform:rotate(1.2deg)  translateY(3px)  scale(1.015); }
+  50%  { transform:rotate(0deg)    translateY(5px)  scale(1.025); }
+  75%  { transform:rotate(-1.2deg) translateY(3px)  scale(1.015); }
+  100% { transform:rotate(0deg)    translateY(0)    scale(1); }
 }
 
 .section-title{

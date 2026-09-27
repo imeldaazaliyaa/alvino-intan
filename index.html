@@ -2,214 +2,175 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-<meta name="theme-color" content="#8f2b2b" />
-<meta name="description" content="You are invited. The Wedding of Alvino & Intan — Minggu, 25 Oktober 2026." />
-<meta property="og:type" content="website" />
-<meta property="og:title" content="ALVINO & INTAN" />
-<meta property="og:description" content="You are invited. The Wedding of Alvino & Intan — 25 Oktober 2026." />
-<meta property="og:image" content="assets/save-date/sd-1.jpg" />
-<title>ALVINO &amp; INTAN</title>
-
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='16'%20fill='%238f2b2b'/%3E%3Ctext%20x='32'%20y='44'%20font-family='Georgia,serif'%20font-size='36'%20text-anchor='middle'%20fill='%23fdf3e6'%3E%26amp;%3C/text%3E%3C/svg%3E" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#f4ecdc" />
+<title>The Wedding of Alvino &amp; Intan</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Belleza&family=Pinyon+Script&family=Cinzel+Decorative:wght@400&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<audio id="weddingAudio" loop preload="auto" src="assets/music/song.mp3"></audio>
-
-<button id="audioButton" class="music-toggle" aria-label="Putar / jeda musik">
-  <svg class="icon-note" viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true">
-    <path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/>
-  </svg>
-  <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true">
-    <rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/>
-  </svg>
-</button>
-
-<!-- ========== COVER ========== -->
-<section id="cover" class="cover">
-  <div class="cover-bg"></div>
-  <div class="lantern lantern-a"><img src="assets/cover/lampion-left.png" alt="" /></div>
-  <div class="lantern lantern-b"><img src="assets/cover/lampion-right.png" alt="" /></div>
-  <img class="cover-flowers" src="assets/cover/flowers-cover-bottom.png" alt="" />
-
-  <div class="cover-inner">
-    <div class="cover-text">
-      <p class="cover-wedding-of">THE WEDDING OF</p>
-      <h1 class="cover-name">
-        <span class="cn-line">Alvino</span>
-        <span class="cn-amp">&amp;</span>
-        <span class="cn-line">Intan</span>
-      </h1>
-    </div>
-
-    <div class="cover-guest">
-      <p class="guest-eyebrow">Kepada Yth.<br>Bapak/ Ibu/ Saudara/ i</p>
-      <p class="guest-name" id="guestName">BELOVED GUEST</p>
-      <a href="#ayatsuci" id="btn-cover" class="btn-open-link">
-        <span class="btn-open">OPEN INVITATION</span>
-      </a>
-    </div>
+<!-- DESKTOP BACKGROUND -->
+<div class="desktop-bg">
+  <div class="desktop-bg-overlay"></div>
+  <div class="desktop-bg-text">
+    <p class="db-eyebrow">UNDANGAN PERNIKAHAN</p>
+    <h1 class="db-couple">Alvino &amp; Intan</h1>
+    <p class="db-date">25 OKTOBER 2026</p>
   </div>
-</section>
+</div>
 
-<!-- ========== MAIN ========== -->
-<main id="main" class="main-hidden">
+<div class="phone-frame">
 
-  <!-- 1. AYAT SUCI -->
-  <section id="ayatsuci" class="page page-ayat">
-    <div class="page-inner">
-      <div class="ayat-frame" data-anim="fade-up">
-        <img class="ayat-photo" src="assets/ayat/photo-ayat-framed.webp" alt="Alvino &amp; Intan" />
-        <img class="ayat-garland" src="assets/ayat/flowers-top-ayat.png" alt="" />
+  <audio id="bgMusic" loop preload="auto">
+    <source src="assets/music/song.mp3" type="audio/mpeg" />
+  </audio>
+
+  <button id="musicToggle" class="music-toggle" aria-label="Toggle Music">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+      <path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/>
+    </svg>
+  </button>
+
+  <!-- ===== COVER — LIKE V1 (bunga bawah simple, guest card cream) ===== -->
+  <section id="cover" class="cover">
+    <div class="cover-inner">
+      <img class="lampion lampion-left"  src="assets/cover/lampion-left.png"  alt="" />
+      <img class="lampion lampion-right" src="assets/cover/lampion-right.png" alt="" />
+
+      <div class="cover-text">
+        <p class="cover-eyebrow">THE WEDDING OF</p>
+        <h1 class="cover-name shimmer-text">Alvino</h1>
+        <p class="cover-amp cinzel shimmer-text">&amp;</p>
+        <h1 class="cover-name shimmer-text">Intan</h1>
       </div>
 
-      <div class="ayat-box panel" data-anim="fade-up">
-        <p class="ayat-text">
-          &ldquo;Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu berpasang-pasangan dari jenismu sendiri, supaya kamu merasa tenang dan tentram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir.&rdquo;
-        </p>
-        <p class="ayat-source">QS. Ar-Rum: 21</p>
+      <div class="cover-guest">
+        <p class="guest-eyebrow">KEPADA YTH.</p>
+        <p class="guest-eyebrow">BAPAK/ IBU/ SAUDARA/ I</p>
+        <p class="guest-name" id="guestName">NAMA TAMU</p>
+        <button id="openInvitation" class="btn-open">OPEN INVITATION</button>
       </div>
+
+      <img class="cover-flowers" src="assets/cover/flowers-cover-bottom.png" alt="" />
     </div>
   </section>
 
-  <!-- 2. MEMPELAI -->
-  <section id="profil" class="page page-profil">
-    <img class="deco deco-tl" src="assets/profil/orchid-top-left.png" alt="" />
-    <img class="deco deco-br" src="assets/profil/orchid-bottom-right.png" alt="" />
-    <div class="page-inner">
-      <div class="panel profil-panel" data-anim="fade-up">
-        <div class="bismillah">
-          <p class="bismillah-title">Bismillahirrahmanirrahim</p>
-          <p class="bismillah-title">Assalamu&rsquo;alaikum Warahmatullahi Wabarakatuh</p>
+  <main id="main" class="main-hidden">
+
+    <!-- ===== AYAT — foto TANPA shape, ayat text DALAM shape ===== -->
+    <section class="page" data-anim="fade-up">
+      <img class="garland-center" src="assets/ayat/flowers-top-ayat.png" alt="" data-anim="fade-down" />
+      <img class="ayat-photo" src="assets/ayat/photo-ayat-framed.webp"
+           alt="" data-anim="zoom-in" />
+      <div class="ayat-box" data-anim="fade-up">
+        <p class="ayat-text">
+          &ldquo;Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu berpasang-pasangan dari jenismu sendiri, supaya kamu merasa tenang dan tentram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir.&rdquo;
+        </p>
+        <p class="ayat-source">(QS. Ar-Rum: 21)</p>
+      </div>
+    </section>
+
+    <!-- ===== PROFIL — card putih 60% ===== -->
+    <section class="page">
+      <div class="card card-white card-profil" data-anim="pop-in">
+        <img class="orchid orchid-tl" src="assets/profil/orchid-top-left.png" alt="" data-anim="fade-down" />
+
+        <div class="bismillah" data-anim="fade-up">
+          <p>Bismillahirrahmanirrahim</p>
+          <p>Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
           <p class="bismillah-body">
             Maha Suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan.
             Ya Allah semoga ridho-Mu tercurah mengiringi pernikahan kami.
           </p>
         </div>
 
-        <div class="couple-row">
-          <figure class="couple-card" data-anim="fade-up">
-            <img class="couple-photo" src="assets/profil/groom-framed.webp" alt="The Groom" />
-            <figcaption class="couple-role">The Groom</figcaption>
-          </figure>
-          <figure class="couple-card" data-anim="fade-up">
-            <img class="couple-photo" src="assets/profil/bride-framed.webp" alt="The Bride" />
-            <figcaption class="couple-role">The Bride</figcaption>
-          </figure>
+        <div class="couple-frames">
+          <div class="couple-card" data-anim="slide-in-left">
+            <img src="assets/profil/groom-framed.webp" alt="Groom" class="couple-photo" />
+            <p class="couple-label pinyon">The Groom</p>
+          </div>
+          <div class="couple-card" data-anim="slide-in-right">
+            <img src="assets/profil/bride-framed.webp" alt="Bride" class="couple-photo" />
+            <p class="couple-label pinyon">The Bride</p>
+          </div>
         </div>
 
-        <div class="couple-names" data-anim="fade-up">
-          <h2 class="mempelai-name">Alvino Fii Ramadhan S.Tr.M.</h2>
-          <p class="parents">Putra dari Bapak Agus Yani &amp; Ibu Suliyati</p>
-          <p class="amp-big">&amp;</p>
-          <h2 class="mempelai-name">Intan Rahmadhani S.Farm.</h2>
-          <p class="parents">Putri dari Bapak Suko Dwi Tjahjono (Alm) &amp; Ibu Nanik Suyanti</p>
+        <div class="fullname-block">
+          <h2 class="fullname fullname-groom" data-anim="fade-up">Alvino Fii Ramadhan S.Tr.M.</h2>
+          <p class="parents" data-anim="fade-up">Putra dari Bapak Agus Yani &amp; Ibu Suliyati</p>
+
+          <p class="amp-big cinzel" data-anim="zoom-in">&amp;</p>
+
+          <h2 class="fullname" data-anim="fade-up">Intan Rahmadhani S.Farm.</h2>
+          <p class="parents" data-anim="fade-up">Putri dari Bapak Suko Dwi Tjahjono (Alm) &amp; Ibu Nanik Suyanti</p>
+        </div>
+
+        <img class="orchid orchid-br" src="assets/profil/orchid-bottom-right.png" alt="" data-anim="fade-up" />
+      </div>
+    </section>
+
+    <!-- ===== SAVE THE DATE ===== -->
+    <section class="page">
+      <img class="orchid-out orchid-tr" src="assets/save-date/a11.png" alt="" data-anim="fade-down" />
+
+      <div class="page-inner-sd">
+        <div class="sd-frame-wrap" data-anim="zoom-in">
+          <div class="sd-photos">
+            <img src="assets/save-date/sd-1.jpg" class="sd-photo active" alt="" />
+            <img src="assets/save-date/sd-2.jpg" class="sd-photo" alt="" />
+            <img src="assets/save-date/sd-3.jpg" class="sd-photo" alt="" />
+            <img src="assets/save-date/sd-4.jpg" class="sd-photo" alt="" />
+            <img src="assets/save-date/sd-5.jpg" class="sd-photo" alt="" />
+          </div>
+          <img src="assets/save-date/frame-lace-oval.png" alt="" class="sd-frame" />
+          <div class="sd-caption">
+            <p class="sd-date-num garamond">25<br>OKT<br>2026</p>
+            <p class="sd-tag pinyon">save the date!</p>
+          </div>
+        </div>
+
+        <div class="countdown" data-anim="fade-up">
+          <div class="cd-box"><span id="cdDays">00</span><small>Hari</small></div>
+          <div class="cd-box"><span id="cdHours">00</span><small>Jam</small></div>
+          <div class="cd-box"><span id="cdMinutes">00</span><small>Menit</small></div>
+          <div class="cd-box"><span id="cdSeconds">00</span><small>Detik</small></div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 3. SAVE THE DATE + COUNTDOWN -->
-  <section id="savedate" class="page page-save-date">
-    <img class="deco deco-tr" src="assets/profil/orchid-top-left.png" alt="" />
-    <div class="page-inner">
-      <div class="sd-oval" data-anim="fade-up">
-        <div class="sd-photos">
-          <img src="assets/save-date/sd-1.jpg" class="sd-photo active" alt="" />
-          <img src="assets/save-date/sd-2.jpg" class="sd-photo" alt="" />
-          <img src="assets/save-date/sd-3.jpg" class="sd-photo" alt="" />
-          <img src="assets/save-date/sd-4.jpg" class="sd-photo" alt="" />
-          <img src="assets/save-date/sd-5.jpg" class="sd-photo" alt="" />
-        </div>
-        <img class="sd-frame" src="assets/save-date/bitmap.webp" alt="" />
-        <div class="sd-overlay">
-          <p class="sd-date">25<br>OKT<br>2026</p>
-          <p class="sd-tag">save the date!</p>
-        </div>
+    <!-- ===== RESEPSI — card putih 60% ===== -->
+    <section class="page">
+      <div class="card card-white card-with-garland card-resepsi" data-anim="pop-in">
+        <img class="garland-overlay" src="assets/resepsi/flowers-top-resepsi.png" alt="" data-anim="fade-down" />
+        <h2 class="pinyon resepsi-title" data-anim="fade-up">Resepsi</h2>
+        <p class="resepsi-date" data-anim="fade-up">Minggu, 25 Oktober 2026</p>
+        <p class="resepsi-time" data-anim="fade-up">11.30 WIB</p>
+        <p class="resepsi-venue" data-anim="fade-up">Hotel Trio Indah 2 Malang</p>
+        <p class="resepsi-address" data-anim="fade-up">Jl. Brigjen Slamet Riadi 1-3&nbsp; Klojen Malang</p>
+        <a href="https://maps.google.com/?q=Hotel+Trio+Indah+2+Malang" target="_blank" rel="noopener" class="btn-primary" data-anim="fade-up">LIHAT LOKASI</a>
       </div>
+    </section>
 
-      <div class="countdown" data-anim="fade-up">
-        <div class="cd-item"><span id="cdDays">00</span><small>Hari</small></div>
-        <div class="cd-item"><span id="cdHours">00</span><small>Jam</small></div>
-        <div class="cd-item"><span id="cdMinutes">00</span><small>Menit</small></div>
-        <div class="cd-item"><span id="cdSeconds">00</span><small>Detik</small></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4. AKAD + RESEPSI -->
-  <section id="event" class="page page-event">
-    <div class="page-inner">
-      <div class="event-card panel" data-anim="fade-up">
-        <img class="event-garland" src="assets/ayat/flowers-top-ayat.png" alt="" />
-        <h2 class="event-title">Akad Nikah</h2>
-        <p class="event-date">Minggu, 25 Oktober 2026</p>
-        <p class="event-time">08.00 WIB</p>
-        <p class="event-venue">Hotel Trio Indah 2 Malang</p>
-        <p class="event-address">Jl. Brigjen Slamet Riadi No. 1-3, Klojen, Malang</p>
-        <a href="https://maps.google.com/?q=Hotel+Trio+Indah+2+Malang" target="_blank" rel="noopener" class="btn-primary">LIHAT LOKASI</a>
-      </div>
-
-      <div class="event-card panel" data-anim="fade-up">
-        <img class="event-garland" src="assets/ayat/flowers-top-ayat.png" alt="" />
-        <h2 class="event-title">Resepsi</h2>
-        <p class="event-date">Minggu, 25 Oktober 2026</p>
-        <p class="event-time">11.30 WIB</p>
-        <p class="event-venue">Hotel Trio Indah 2 Malang</p>
-        <p class="event-address">Jl. Brigjen Slamet Riadi No. 1-3, Klojen, Malang</p>
-        <a href="https://maps.google.com/?q=Hotel+Trio+Indah+2+Malang" target="_blank" rel="noopener" class="btn-primary">LIHAT LOKASI</a>
-      </div>
-
-      <figure class="photo-card" data-anim="fade-up">
-        <img src="assets/resepsi/photo-resepsi.jpg" alt="Alvino &amp; Intan" />
-      </figure>
-    </div>
-  </section>
-
-  <!-- 5. LIVE STREAMING -->
-  <section id="live" class="page page-live">
-    <div class="page-inner">
-      <div class="panel live-panel" data-anim="fade-up">
-        <h2 class="section-script">Live<br>Streaming</h2>
-        <p class="section-desc">
-          Acara akan disiarkan secara live melalui youtube,<br />
-          Minggu, 25 Oktober 2026 | Pukul 11.30 WIB
-        </p>
-        <div class="center">
-          <a href="#" id="liveYoutubeBtn" class="btn-primary">OPEN YOUTUBE</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6. RSVP -->
-  <section id="rsvp" class="page page-rsvp">
-    <div class="page-inner">
-      <div class="panel rsvp-panel">
-        <figure class="photo-card photo-card-in" data-anim="fade-up">
-          <img src="assets/rsvp/photo-rsvp.jpg" alt="Alvino &amp; Intan" />
-        </figure>
-
-        <h2 class="section-serif" data-anim="fade-up">RSVP</h2>
-        <p class="section-desc" data-anim="fade-up">
-          Merupakan suatu kehormatan dan kebahagiaan bagi kami sekeluarga apabila
-          Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada kedua
-          mempelai. Atas kehadiran serta doa restu, kami ucapkan terima kasih.
+    <!-- ===== RSVP — card putih 60% clean ===== -->
+    <section class="page">
+      <div class="card card-white card-rsvp" data-anim="pop-in">
+        <img class="rsvp-photo" src="assets/rsvp/photo-rsvp.jpg"
+             alt="" data-anim="zoom-in" />
+        <h2 class="rsvp-title garamond" data-anim="fade-up">RSVP</h2>
+        <p class="rsvp-desc" data-anim="fade-up">
+          Merupakan suatu kehormatan dan kebahagiaan bagi kami sekeluarga apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada kedua mempelai. Atas kehadiran serta doa restu, kami ucapkan terima kasih.
         </p>
 
-        <form id="rsvpForm" class="form-underline" data-anim="fade-up">
+        <form id="rsvpForm" class="rsvp-form" data-anim="fade-up">
           <label>
             <span>Nama*</span>
-            <input type="text" name="nama" required autocomplete="name" />
+            <input type="text" name="nama" required />
           </label>
-
           <label>
             <span>Konfirmasi Kehadiran*</span>
             <select name="kehadiran" required>
@@ -218,206 +179,100 @@
               <option value="Tidak Hadir">Maaf, saya tidak bisa hadir</option>
             </select>
           </label>
-
           <label>
             <span>Jumlah Kedatangan*</span>
             <select name="jumlah" required>
               <option value="">-- Pilih --</option>
               <option value="1">1 orang</option>
               <option value="2">2 orang</option>
-              <option value="3">3 orang</option>
-              <option value="4">4 orang</option>
             </select>
           </label>
-
           <label>
             <span>Ucapan</span>
-            <textarea name="ucapan" rows="3" placeholder="Tulis ucapan & doa..."></textarea>
+            <textarea name="ucapan" rows="4" placeholder="Tulis ucapan &amp; doa..."></textarea>
           </label>
-
-          <button type="submit" class="btn-primary btn-full">KIRIM</button>
+          <button type="submit" class="btn-primary">KIRIM</button>
           <p id="rsvpStatus" class="rsvp-status"></p>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- 7. GALLERY -->
-  <section id="gallery" class="page page-gallery">
-    <div class="page-inner">
-      <h2 class="section-script" data-anim="fade-up">Gallery</h2>
-      <div class="gallery-grid" data-anim="fade-up">
-        <img src="assets/gallery/gallery-1.webp" alt="" loading="lazy" />
-        <img src="assets/gallery/gallery-2.webp" alt="" loading="lazy" />
-        <img src="assets/gallery/gallery-3.webp" alt="" loading="lazy" />
-        <img src="assets/gallery/gallery-4.webp" alt="" loading="lazy" />
-        <img src="assets/gallery/gallery-5.webp" alt="" loading="lazy" />
-        <img src="assets/gallery/gallery-6.webp" alt="" loading="lazy" />
-        <img src="assets/gallery/gallery-7.webp" alt="" loading="lazy" />
-        <img src="assets/gallery/gallery-8.webp" alt="" loading="lazy" />
-        <img src="assets/gallery/gallery-9.webp" alt="" loading="lazy" />
-      </div>
-    </div>
-  </section>
-
-  <!-- 8. KISAH CINTA -->
-  <section id="story" class="page page-story">
-    <div class="page-inner">
-      <h2 class="section-script" data-anim="fade-up">Kisah Cinta</h2>
-
-      <div class="story-thumbs" data-anim="fade-up">
-        <img src="assets/save-date/sd-1.jpg" alt="" />
-        <img src="assets/save-date/sd-2.jpg" alt="" />
-        <img src="assets/save-date/sd-3.jpg" alt="" />
-        <img src="assets/save-date/sd-4.jpg" alt="" />
-        <img src="assets/save-date/sd-5.jpg" alt="" />
-      </div>
-
-      <ol class="story-timeline">
-        <li class="story-item panel" data-anim="fade-up">
-          <span class="story-dot" aria-hidden="true"></span>
-          <h3>Awal pertemuan</h3>
-          <p>Atas kehendak Allah, kami dipertemukan dalam sebuah momen sederhana yang ternyata menjadi awal dari segalanya. Dari perkenalan yang singkat, tumbuh rasa nyaman dan keyakinan.</p>
-        </li>
-        <li class="story-item panel" data-anim="fade-up">
-          <span class="story-dot" aria-hidden="true"></span>
-          <h3>Menjalin Hubungan</h3>
-          <p>Seiring berjalannya waktu, kami saling mengenal lebih dalam — melewati suka dan duka bersama, saling menguatkan, dan memantapkan hati untuk melangkah lebih jauh.</p>
-        </li>
-        <li class="story-item panel" data-anim="fade-up">
-          <span class="story-dot" aria-hidden="true"></span>
-          <h3>Langkah Terakhir</h3>
-          <p>Dengan restu kedua keluarga, kami memutuskan untuk menyempurnakan separuh agama dan memulai perjalanan baru sebagai suami istri. Semoga Allah senantiasa melimpahkan kebahagiaan.</p>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- 9. UCAPAN & DOA -->
-  <section id="wishes" class="page page-wishes">
-    <div class="page-inner">
-      <div class="panel wishes-panel">
-        <h2 class="section-script" data-anim="fade-up">Ucapan<br>&amp; Doa</h2>
-        <p class="section-desc" data-anim="fade-up">
-          Sampaikan doa dan harapan terbaik di sini, saat kami memulai perjalanan baru bersama.
-        </p>
-
-        <form id="wishForm" class="form-underline" data-anim="fade-up">
-          <label>
-            <span>Nama*</span>
-            <input type="text" name="nama" required />
-          </label>
-          <label>
-            <span>Ucapan &amp; doa*</span>
-            <textarea name="ucapan" rows="4" required placeholder="Tulis ucapan & doa..."></textarea>
-          </label>
-          <button type="submit" class="btn-primary btn-full">KIRIM UCAPAN</button>
-          <p id="wishStatus" class="rsvp-status"></p>
         </form>
 
         <div class="wishes-wrap" data-anim="fade-up">
+          <h3 class="wishes-title pinyon">Ucapan &amp; Doa</h3>
           <div id="wishesList" class="wishes-list"></div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 10. GIFT -->
-  <section id="gift" class="page page-gift">
-    <img class="deco deco-tl" src="assets/profil/orchid-top-left.png" alt="" />
-    <div class="page-inner">
-      <div class="panel gift-panel">
-        <h2 class="section-script" data-anim="fade-up">Gift</h2>
-        <p class="section-desc" data-anim="fade-up">
-          Kehadiran dan doa Anda adalah hadiah terindah bagi kami. Namun, apabila berkenan
-          memberikan tanda kasih, silakan gunakan informasi di bawah ini:
+    <!-- ===== GALLERY ===== -->
+    <section class="page page-gallery">
+      <h2 class="section-title pinyon" data-anim="fade-up">Gallery</h2>
+      <div class="gallery-grid">
+        <img src="assets/gallery/gallery-1.webp" alt="" data-anim="zoom-in" />
+        <img src="assets/gallery/gallery-2.webp" alt="" data-anim="zoom-in" />
+        <img src="assets/gallery/gallery-3.webp" alt="" data-anim="zoom-in" />
+        <img src="assets/gallery/gallery-4.webp" alt="" data-anim="zoom-in" />
+        <img src="assets/gallery/gallery-5.webp" alt="" data-anim="zoom-in" />
+        <img src="assets/gallery/gallery-6.webp" alt="" data-anim="zoom-in" />
+        <img src="assets/gallery/gallery-7.webp" alt="" data-anim="zoom-in" />
+        <img src="assets/gallery/gallery-8.webp" alt="" data-anim="zoom-in" />
+        <img src="assets/gallery/gallery-9.webp" alt="" data-anim="zoom-in" />
+      </div>
+    </section>
+
+    <!-- ===== GIFT — card putih 60% ===== -->
+    <section class="page">
+      <div class="card card-white card-with-orchid-tl" data-anim="pop-in">
+        <img class="orchid orchid-tl orchid-gift" src="assets/profil/orchid-top-left.png" alt="" data-anim="fade-down" />
+        <h2 class="section-title pinyon" data-anim="fade-up">Gift</h2>
+        <p class="gift-desc" data-anim="fade-up">
+          Kehadiran dan doa Anda adalah hadiah terindah bagi kami. Namun, apabila berkenan memberikan tanda kasih, silakan gunakan informasi di bawah ini:
         </p>
 
-        <div id="giftArea" class="area-gift-card">
-          <div class="gift-card" data-anim="fade-up">
-            <img src="assets/gift/bca-logo.png" alt="BCA" class="bank-logo" />
-            <p class="bank-number">4390990117</p>
-            <p class="bank-name">An. Intan Rahmadhani</p>
-            <button class="btn-primary btn-copy" data-copy="4390990117">SALIN NOMOR REKENING</button>
-          </div>
+        <div class="gift-card" data-anim="fade-up">
+          <img src="assets/gift/bca-logo.png" alt="BCA" class="bank-logo" />
+          <p class="bank-number">4390990117</p>
+          <p class="bank-name">An. Intan Rahmadhani</p>
+          <button class="btn-primary btn-copy" data-copy="4390990117">SALIN NOMOR REKENING</button>
+        </div>
 
-          <div class="gift-card" data-anim="fade-up">
-            <img src="assets/gift/bca-logo.png" alt="BCA" class="bank-logo" />
-            <p class="bank-number">8161765813</p>
-            <p class="bank-name">An. Alvino Fii Ramadhan</p>
-            <button class="btn-primary btn-copy" data-copy="8161765813">SALIN NOMOR REKENING</button>
-          </div>
+        <div class="gift-card" data-anim="fade-up">
+          <img src="assets/gift/bca-logo.png" alt="BCA" class="bank-logo" />
+          <p class="bank-number">8161765813</p>
+          <p class="bank-name">An. Alvino Fii Ramadhan</p>
+          <button class="btn-primary btn-copy" data-copy="8161765813">SALIN NOMOR REKENING</button>
+        </div>
 
-          <div class="gift-card" data-anim="fade-up">
-            <img src="assets/gift/gift-icon.png" alt="" class="gift-icon" />
-            <p class="gift-block">
-              <strong>Nama Penerima</strong><br>Alvino / Intan
-            </p>
-            <p class="gift-block">
-              <strong>Alamat Penerima</strong><br>
-              Jl. Raya Tlogomas No.29A, Tlogomas,<br />
-              Kec. Lowokwaru, Kota Malang,<br />
-              Jawa Timur 65144
-            </p>
-            <button class="btn-primary btn-copy" data-copy="Jl. Raya Tlogomas No.29A, Tlogomas, Kec. Lowokwaru, Kota Malang, Jawa Timur 65144">SALIN ALAMAT</button>
-          </div>
-
-          <div class="attention" data-anim="fade-up">
-            <p><strong>&#9432; ATTENTION!</strong></p>
-            <p>* Pastikan nama dan nomor rekening sudah sesuai dengan nama mempelai ketika melakukan proses transfer.</p>
-            <p>* Mohon untuk melakukan konfirmasi hadiah anda dengan mengirim bukti transfer / resi pengiriman kepada mempelai melalui personal message. Terima kasih.</p>
-          </div>
+        <div class="gift-card" data-anim="fade-up">
+          <img src="assets/gift/gift-icon.png" alt="" class="gift-icon" />
+          <p class="bank-name"><strong>Nama Penerima</strong><br>Alvino/Intan</p>
+          <p class="bank-name" style="margin-top:14px">
+            <strong>Alamat Penerima</strong><br>
+            Jl. Raya Tlogomas No.29A, Tlogomas,<br>
+            Kec. Lowokwaru, Kota Malang,<br>
+            Jawa Timur 65144
+          </p>
+          <button class="btn-primary btn-copy" data-copy="Jl. Raya Tlogomas No.29A, Tlogomas, Kec. Lowokwaru, Kota Malang, Jawa Timur 65144">SALIN ALAMAT</button>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 11. THANKYOU -->
-  <section id="thankyou" class="page page-thankyou">
-    <div class="page-inner">
-      <img src="assets/thankyou/photo-thankyou-framed.webp" alt="Alvino &amp; Intan" class="ty-photo" data-anim="fade-up" />
-      <h2 class="ty-title" data-anim="fade-up">Thankyou!</h2>
+    <!-- ===== THANKYOU — TANPA card ===== -->
+    <section class="page page-thankyou">
+      <img src="assets/thankyou/photo-thankyou-framed.webp" alt="" class="ty-photo" data-anim="zoom-in" />
+      <h2 class="ty-title pinyon shimmer-text-alt" data-anim="fade-up">Thankyou!</h2>
       <p class="ty-desc" data-anim="fade-up">
-        Menjadi sebuah kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir
-        dalam hari bahagia ini. Terima kasih atas segala ucapan, doa, dan perhatian yang diberikan.
+        Menjadi sebuah kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dalam hari bahagia ini. Terima kasih atas segala ucapan, doa, dan perhatian yang diberikan.
       </p>
       <p class="ty-seeyou" data-anim="fade-up">See you on our big day!</p>
-      <h2 class="ty-couple" data-anim="fade-up">ALVINO &amp; INTAN</h2>
-      <p class="ty-credit" data-anim="fade-up">Made with &#10084; for Alvino &amp; Intan</p>
-    </div>
-  </section>
+      <h1 class="ty-couple garamond" data-anim="fade-up">ALVINO &amp; INTAN</h1>
+    </section>
 
-</main>
+  </main>
 
-<!-- Bunga tetap di bawah viewport -->
-<div id="fixedFlowers" class="fixed-flowers" aria-hidden="true">
-  <img src="assets/flowers-fixed/flowers-fixed-bottom.png" alt="" />
+  <div id="fixedFlowers" class="fixed-flowers">
+    <img src="assets/flowers-fixed/flowers-fixed-bottom.png" alt="" />
+  </div>
+
 </div>
-
-<nav id="bottomNav" class="bottom-nav">
-  <a href="#cover" data-nav="cover" aria-label="Cover">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/><path d="M12 11.8s-2.4-1.5-2.4-2.9a1.35 1.35 0 0 1 2.4-.85 1.35 1.35 0 0 1 2.4.85c0 1.4-2.4 2.9-2.4 2.9z" fill="currentColor" stroke="none"/></svg>
-  </a>
-  <a href="#profil" data-nav="profil" aria-label="Mempelai">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8.5" cy="8" r="3"/><circle cx="15.5" cy="8" r="3"/><path d="M3 20c0-3 2.5-5 5.5-5s5.5 2 5.5 5M13 20c0-3 2.5-5 5.5-5"/></svg>
-  </a>
-  <a href="#event" data-nav="event" aria-label="Acara">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>
-  </a>
-  <a href="#rsvp" data-nav="rsvp" aria-label="RSVP">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
-  </a>
-  <a href="#wishes" data-nav="wishes" aria-label="Ucapan">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12a8 8 0 0 1-8 8H4l2-3a8 8 0 1 1 15-5z"/><path d="M12 10.4s-1.8-1.2-1.8-2.2a1 1 0 0 1 1.8-.65 1 1 0 0 1 1.8.65c0 1-1.8 2.2-1.8 2.2z" fill="currentColor" stroke="none"/></svg>
-  </a>
-</nav>
-
-<div id="lightbox" class="lightbox">
-  <button type="button" class="lightbox-close" aria-label="Tutup">&times;</button>
-  <img id="lightboxImg" src="" alt="" />
-</div>
-
-<div id="fxLayer" class="fx-layer" aria-hidden="true"></div>
 
 <script src="script.js"></script>
 </body>
